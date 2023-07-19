@@ -4,7 +4,6 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Rarrot",
   description: "Rarrot的个人博客网站",
-
   lastUpdated: true,
   cleanUrls: true,
   
