@@ -1,3 +1,4 @@
+# ./deploy.sh
 # 忽略错误
 set -e
 

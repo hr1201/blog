@@ -36,7 +36,9 @@ export default defineConfig({
           collapsed:true,
           items: [
             { text: 'Vue3基础语法', link: '/articles/vuesyntax' },
-            { text: 'Vue核心虚拟DOM和diff算法', link: '/articles/vnodediff' }
+            { text: 'Vue核心虚拟DOM和diff算法', link: '/articles/vnodediff' },
+            { text: '页面刷新store数据丢失', link: '/articles/losestore' }
+
           ]
         },
       ],
