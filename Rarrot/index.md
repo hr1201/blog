@@ -7,7 +7,7 @@ hero:
   text: "个人博客网站"
   tagline: 
   image:
-    src: /header.png
+    src: images/header.jpg
     alt: Rarrot
   actions:
     - theme: brand
