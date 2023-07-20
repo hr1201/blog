@@ -36,7 +36,7 @@ jobs:
         run: |
           cd .vitepress/dist 
           git init
-          git config user.name "gelxgx"
+          git config user.name "hr1201"
           git config user.email "${{ secrets.GIT_EMAIL }}"
           git add -A
           git commit -m 'deploy'
