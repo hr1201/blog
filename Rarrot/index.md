@@ -8,7 +8,7 @@ hero:
   tagline: 
   image:
     src: Rarrot
-    alt: Rarrot
+    # alt: /header.jpg
   actions:
     - theme: brand
       text: 我的博客

@@ -46,7 +46,7 @@ export default defineConfig({
         }
       }
     },
-    lastUpdatedText: '更新日期',
+    lastUpdatedText: '最近更新',
     docFooter: {
       prev: '上一页',
       next: '下一页',
@@ -61,7 +61,7 @@ export default defineConfig({
       text: '在GitHub编辑此页',
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/hr1201/hr1201.github.io' },
+      { icon: 'github', link: 'https://github.com/hr1201' },
       { icon: "twitter", link: "https://twitter.com/home" },
       // 自定义社交连接
       // {
