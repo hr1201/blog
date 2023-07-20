@@ -1,10 +1,9 @@
 name: commit
 
 on:
-  // 配置当push进入什么分支的时候执行
   push:
-    branches: 
-     - main
+    branches:
+      - main   
 
 
 jobs:
