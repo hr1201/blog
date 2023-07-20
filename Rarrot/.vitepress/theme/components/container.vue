@@ -64,7 +64,7 @@ watch(
 /* // TODO 使用giscus自定义主题结合vitepress主题切换 */
 .comments {
 	background-color: #ffffff;
-	padding: 20px;
+	padding: 20px 0;
 	border-radius: 10px;
 }
 </style>
