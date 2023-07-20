@@ -1,4 +1,6 @@
-# setup语法糖
+# Vue3基础语法
+
+## setup语法糖
 
 vue3新增一个setup语法糖形式：
 
@@ -48,8 +50,7 @@ export default {
 ```
 
 
-
-### v-text
+## v-text
 
 ```javascript
 <template>
@@ -71,7 +72,7 @@ export default {
 
 
 
-### v-html
+## v-html
 
 v-html支持html标签，但不支持自定义组件的标签
 
@@ -88,18 +89,18 @@ v-html支持html标签，但不支持自定义组件的标签
 
 ![image-20230715115024289](https://cdn.staticaly.com/gh/hr1201/img@main/imgs/image-20230715115024289.png)
 
-### v-show
+## v-show
 
 v-show跟v-if的不同在于v-show仍然会渲染元素，但是会使用css的display:none将元素隐藏，在对元素进行切换显示时性能会比v-if高，看代码：
 
 ```Vue
 <template>
- `  <div v-show="a">
-   `    <h2>你看我会不会显示出来呢？</h2>
- `  </div>
+   <div v-show="a">
+      <h2>你看我会不会显示出来呢？</h2>
+   </div>
 </template>
 <script setup lang="ts">
- `  const a:boolean =false
+   const a:boolean =false
 </script>
 <style></style>
 ```
@@ -108,7 +109,7 @@ v-show跟v-if的不同在于v-show仍然会渲染元素，但是会使用css的d
 
 ![image-20230715115901394](https://cdn.staticaly.com/gh/hr1201/img@main/imgs/image-20230715115901394.png)
 
-### v-if
+## v-if
 
 当a为true时，h2标签会出现，若为false，则不会出现，以下a为false，不出现：
 
@@ -128,7 +129,7 @@ v-show跟v-if的不同在于v-show仍然会渲染元素，但是会使用css的d
 
 ![image-20230715115605012](https://cdn.staticaly.com/gh/hr1201/img@main/imgs/image-20230715115605012.png)
 
-### v-else
+## v-else
 
 跟if-else一个意思，看代码：
 
@@ -151,7 +152,7 @@ v-show跟v-if的不同在于v-show仍然会渲染元素，但是会使用css的d
 
 
 
-### v-else-if
+## v-else-if
 
 跟if-else if-else一样，看代码：
 
@@ -177,7 +178,7 @@ v-show跟v-if的不同在于v-show仍然会渲染元素，但是会使用css的d
 
 
 
-### v-on
+## v-on
 
 用于绑定事件，可以使用简写形式'@'，看代码：
 
@@ -294,7 +295,7 @@ v-show跟v-if的不同在于v-show仍然会渲染元素，但是会使用css的d
 
 
 
-### v-bind
+## v-bind
 
 动态绑定属性，可以使用简写形式' : '，看代码：
 
@@ -338,7 +339,7 @@ const bo: boolean = true
 
 
 
-### v-model
+## v-model
 
 双向绑定，需要使用到ref或reactive，看代码：
 
@@ -362,7 +363,7 @@ const a=ref('响应式')
 
 
 
-### v-for
+## v-for
 
 跟vue2的类似，看代码：
 
@@ -383,7 +384,7 @@ const arr:string[]=['小华','小明','小林']
 
 
 
-### v-once
+## v-once
 
 用于性能优化，之后渲染一次，看代码：
 
@@ -404,7 +405,7 @@ const a:string[]=['小华','小明','小林']
 
 
 
-### v-memo
+## v-memo
 
 vue3.2新增，缓存一个模板的子树。在元素和组件上都可以使用。为了实现缓存，该指令需要传入一个固定长度的依赖值数组进行比较。如果数组里的每个值都与最后一次的渲染相同，那么整个子树的更新将被跳过。
 

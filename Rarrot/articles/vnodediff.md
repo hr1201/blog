@@ -1,4 +1,6 @@
-### 虚拟DOM
+# Vue核心虚拟DOM和diff算法
+
+## 虚拟DOM
 
 在Vue.js中，**每个组件都有一个对应的虚拟节点树**，当组件的状态发生改变时，Vue.js会通过**比较新旧虚拟节点树**的差异，找出需要更新的部分，然后只更新这些部分对应的真实DOM。这样可以最小化DOM操作，提高应用程序的性能。
 
@@ -22,9 +24,9 @@ const vnode = createVNode('div', { class: 'container' }, 'Hello, Vue 3!');
 在这个例子中，函数的第一个参数是'div'，表示要创建一个`<div>`标签的**虚拟DOM节点**。第二个参数是一个**属性对象**，用于设置class属性为'container'。第三个参数是子节点，这里是一个**文本节点**‘Hello, Vue 3!’。
 
 
-### diff算法
+## 没有key 的diff算法
 
-没有key 的diff算法，看Vue3源码：
+看Vue3源码：
 
 ```javascript
 
@@ -96,7 +98,8 @@ const vnode = createVNode('div', { class: 'container' }, 'Hello, Vue 3!');
 
 
 
-有key 的diff算法，看vue3源代码：
+## 有key 的diff算法
+看vue3源代码：
 
 ```javascript
 
@@ -365,7 +368,8 @@ const vnode = createVNode('div', { class: 'container' }, 'Hello, Vue 3!');
 
 
 
-赋值给**新虚拟节点**时使用的函数，看vue3源代码：
+## 赋值给**新虚拟节点**时使用的函数
+看vue3源代码：
 
 ```javascript
 export function normalizeVNode(child: VNodeChild): VNode {
@@ -400,7 +404,7 @@ export function cloneIfMounted(child: VNode): VNode {
 ```
 
 
-
+## 最长递增子序列
 最长递增子序列目的是在一个给定的数值序列中，找到一个子序列，使得这个子序列元素的数值**依次递增**，并且这个子序列的**长度尽可能地大**，[算法示例执行过程](https://www.wikiwand.com/en/File:LISDemo.gif)，在vue3中传入新节点在旧节点的位置数组至以下函数，获取到升序的递增子序列(由乱序转为有序)，看vue3源代码：
 
 ```javascript

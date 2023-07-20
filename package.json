@@ -1,19 +1,22 @@
 {
   "name": "blog",
   "version": "1.0.0",
-  "description": "", 
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "Rarrot:dev": "vitepress dev Rarrot",
     "Rarrot:build": "vitepress build Rarrot",
     "Rarrot:preview": "vitepress preview Rarrot",
-    "deploy:win": "powershell bin/autoDeploy.bat"
+    "deploy": "deploy.sh"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "vitepress": "1.0.0-beta.2"
+  },
+  "dependencies": {
+    "gitalk": "^1.8.0"
   }
 }
