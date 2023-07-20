@@ -1,29 +1,70 @@
 <template>
-    <div id="gitalk-container"></div>
+	<div class="comments">
+		<component
+			v-if="showComment"
+			src="https://giscus.app/client.js"
+			:is="'script'"
+			:key="title"
+			:data-repo="giscusConfig.repo"
+			:data-repo-id="giscusConfig.repoId"
+			:data-category="giscusConfig.category"
+			:data-category-id="giscusConfig.categoryId"
+			:data-mapping="giscusConfig.mapping"
+			:data-strict="giscusConfig.strict"
+			:data-reactions-enabled="giscusConfig.reactionsEnabled"
+			:data-emit-metadata="giscusConfig.emitMetadata"
+			:data-input-position="giscusConfig.inputPosition"
+			:data-lang="giscusConfig.lang"
+			:data-theme="giscusConfig.theme"
+			:data-loading="giscusConfig.loading"
+            :data-crossorign="giscusConfig.crossorign"
+		/>
+	</div>
 </template>
-  
-<script setup>
-import { onMounted } from 'vue'
-import Gitalk from 'gitalk'
-import 'gitalk/dist/gitalk.css'
+<script lang="ts" setup>
+import { reactive, ref, watch } from "vue";
+import { useData, useRoute } from "vitepress";
 
-// 了解更多 👉 https://github.com/gitalk/gitalk/
-// clientID & clientSecret 👉 https://github.com/settings/applications/new
+const route = useRoute();
 
-onMounted(() => {
-    const commentConfig = {
-        enable: true,
-        clientID: 'c0a42713b9ff073bbdf0', //clientID 
-        clientSecret: '040960c4d1d7390c7f30fa2fbba178577d9fcb09', //clientSecret
-        repo: 'gitalk-evalute', // 评论仓库名
-        owner: 'hr1201',
-        admin: ['hr1201'], //管理人
-        githubID: 'hr1201',
-        id: decodeURI(window.location.pathname), // 返回当前 URL 的路径部分作为id
-        language: 'zh-CN', //语言
-        distractionFreeMode: false  // 无干扰模式
-    }
-    const gitalk = new Gitalk(commentConfig)
-    gitalk.render('gitalk-container')
-})
+const { title } = useData();
+
+// params generate in https://giscus.app/zh-CN
+const giscusConfig = reactive({
+	repo: "hr1201/gitalk-evalute",
+	repoId: "R_kgDOJ9WSwA",
+	category: "Announcements",
+	categoryId: "DIC_kwDOJ9WSwM4CYA7u",
+	mapping: "title",
+	strict: "0",
+	reactionsEnabled: "1",
+	emitMetadata: "0",
+	inputPosition: "top",
+	theme: "preferred_color_scheme",
+	lang: "zh-CN",
+	loading: "lazy",
+    crossorign:'anonymous'
+});
+
+const showComment = ref(true);
+watch(
+	() => route.path,
+	() => {
+		showComment.value = false;
+		setTimeout(() => {
+			showComment.value = true;
+		}, 200);
+	},
+	{
+		immediate: true,
+	}
+);
 </script>
+<style>
+/* // TODO 使用giscus自定义主题结合vitepress主题切换 */
+.comments {
+	background-color: #ffffff;
+	padding: 20px;
+	border-radius: 10px;
+}
+</style>

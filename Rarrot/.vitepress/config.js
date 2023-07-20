@@ -5,7 +5,7 @@ export default defineConfig({
   description: "Rarrot的个人博客网站",
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   lastUpdated: true,
-  cleanUrls: true,
+  // cleanUrls: true,
   markdown: {
     lineNumbers: true,
     // https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-themes
