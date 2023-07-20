@@ -3,7 +3,6 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Rarrot",
   description: "Rarrot的个人博客网站",
-  base: '/blog/',
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   lastUpdated: true,
   cleanUrls: true,
