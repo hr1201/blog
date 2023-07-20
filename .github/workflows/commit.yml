@@ -18,21 +18,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
 
-     // 使用的node版本   
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@main
         with:
           node-version:  ${{ matrix.node }}
       
-    // 执行安装
+
       - name: Install dependencies
         run: npm install
     
-    // 执行打包
+
       - name: Build VuePress
         run: npm run build
       
-    // 执行部署
+
       - name: Deploy to Pages
         run: |
           cd .vitepress/dist 
