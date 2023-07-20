@@ -9,6 +9,7 @@ export default {
   Layout: () => {
     return h(Theme.Layout, null, {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
+			"doc-after": () => h(containers),
     })
   },
   enhanceApp({ app, router, siteData }) {
