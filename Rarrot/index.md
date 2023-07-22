@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: brand
       text: 我的博客
-      link: /articles/iterable
+      link: /articles/生成器
     - theme: alt
       text: 示例
       link: /articles/hello
