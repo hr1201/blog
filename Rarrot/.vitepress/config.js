@@ -46,14 +46,14 @@ export default defineConfig({
         }
       }
     },
-    lastUpdatedText: '最近更新',
+    lastUpdatedText: '更新日期',
     docFooter: {
       prev: '上一页',
       next: '下一页',
     },
     darkModeSwitchLabel: '主题',
     outline:[2,3],
-    outlineTitle: '索引',
+    outlineTitle: '本页目录',
     sidebarMenuLabel: '目录',
     returnToTopLabel: '回到顶部',
     editLink: {
@@ -83,8 +83,8 @@ export default defineConfig({
           collapsible: true,
           collapsed: true,
           items: [
-            { text: '生成器', link: '/articles/iterable' },
-            { text: '迭代器与生成器总结', link: '/articles/iterator' }
+            { text: '生成器', link: '/articles/生成器' },
+            { text: '迭代器与生成器总结', link: '/articles/迭代器与生成器总结' }
           ]
         },
         {
@@ -92,9 +92,10 @@ export default defineConfig({
           collapsible: true,
           collapsed: true,
           items: [
-            { text: 'Vue3基础语法', link: '/articles/vuesyntax' },
-            { text: 'Vue核心虚拟DOM和diff算法', link: '/articles/vnodediff' },
-            { text: '页面刷新store数据丢失', link: '/articles/losestore' }
+            { text: 'Vue3基础语法', link: '/articles/Vue3基础语法' },
+            { text: 'Vue核心虚拟DOM和diff算法', link: '/articles/Vue核心虚拟DOM和diff算法' },
+            { text: '页面刷新store数据丢失', link: '/articles/页面刷新store数据丢失' },
+            { text: 'vscode配置自定义代码片段', link: '/articles/vscode配置自定义代码片段' },
           ]
         },
       ],

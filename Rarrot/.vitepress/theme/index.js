@@ -3,6 +3,7 @@ import { h } from 'vue'
 import Theme from 'vitepress/theme'
 import './style.css'
 import containers from './components/container.vue'
+import homeBackground from './components/homeBackground.vue'
 
 export default {
   ...Theme,
@@ -13,6 +14,9 @@ export default {
     })
   },
   enhanceApp({ app, router, siteData }) {
-    app.component('containers', containers)
+    app
+      .component('containers', containers)
+      .component('homeBackground', homeBackground)
+
   }
 }

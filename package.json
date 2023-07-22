@@ -15,8 +15,5 @@
   "license": "ISC",
   "devDependencies": {
     "vitepress": "1.0.0-beta.2"
-  },
-  "dependencies": {
-    "gitalk": "^1.8.0"
   }
 }
