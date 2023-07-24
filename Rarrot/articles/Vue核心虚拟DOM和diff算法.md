@@ -452,3 +452,9 @@ function getSequence(arr: number[]): number[] {
 }
 ```
 
+## 练习最长递增子序列
+可以前往LeetCode练习用代码怎么写出最长递增子序列:
+
+[最长连续递增序列\[简单\]](https://leetcode.cn/problems/longest-continuous-increasing-subsequence)
+
+[最长递增子序列\[中等\]](https://leetcode.cn/problems/longest-increasing-subsequence/)
