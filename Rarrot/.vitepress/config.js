@@ -1,4 +1,6 @@
 import { defineConfig } from 'vitepress'
+import sidebarAuto from './sidebarAuto'
+const path = require("path");
 
 export default defineConfig({
   title: "Rarrot",
@@ -52,7 +54,7 @@ export default defineConfig({
       next: '下一页',
     },
     darkModeSwitchLabel: '主题',
-    outline:[2,3],
+    outline: [2, 3],
     outlineTitle: '本页目录',
     sidebarMenuLabel: '目录',
     returnToTopLabel: '回到顶部',
@@ -73,32 +75,27 @@ export default defineConfig({
     ],
     nav: [
       // { text: 'Home', link: '/' },
-      { text: 'blog', link: '/articles/hello' }
+      {
+        text: '博客',
+        items: [
+          { text: "JavaScript", link: "/articles/JavaScript/生成器" },
+          { text: "typescript", link: "/articles/typescript/01基础类型" },
+          { text: "Vue", link: "/articles/Vue/01-Vue3基础语法" },
+        ],
+      }
     ],
     sidebar: {
       // 定义"/articles/" 将此配置为路径，只有包含这个路径的才会出现侧边栏
-      "/articles/": [
-        {
-          text: 'JavaScript',
-          collapsible: true,
-          collapsed: true,
-          items: [
-            { text: '生成器', link: '/articles/生成器' },
-            { text: '迭代器与生成器总结', link: '/articles/迭代器与生成器总结' }
-          ]
-        },
-        {
-          text: 'Vue',
-          collapsible: true,
-          collapsed: true,
-          items: [
-            { text: 'Vue3基础语法', link: '/articles/Vue3基础语法' },
-            { text: 'Vue核心虚拟DOM和diff算法', link: '/articles/Vue核心虚拟DOM和diff算法' },
-            { text: '页面刷新store数据丢失', link: '/articles/页面刷新store数据丢失' },
-            { text: 'vscode配置自定义代码片段', link: '/articles/vscode配置自定义代码片段' },
-          ]
-        },
-      ],
-    },
+      "/articles": sidebarAuto(
+        path.resolve(__dirname, "../articles/JavaScript"),
+      ),
+      "/articles/typescript": sidebarAuto(
+        path.resolve(__dirname, "../articles/typescript"),
+      ),
+      "/articles/Vue": sidebarAuto(
+        path.resolve(__dirname, "../articles/Vue"),
+      ),
+    }
+
   },
 })
