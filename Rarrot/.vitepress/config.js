@@ -79,7 +79,7 @@ export default defineConfig({
         text: '博客',
         items: [
           { text: "JavaScript", link: "/articles/JavaScript/生成器" },
-          { text: "typescript", link: "/articles/typescript/01基础类型" },
+          { text: "typescript", link: "/articles/typescript/01-基础类型" },
           { text: "Vue", link: "/articles/Vue/01-Vue3基础语法" },
         ],
       }
