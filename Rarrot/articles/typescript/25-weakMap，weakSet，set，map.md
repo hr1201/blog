@@ -1,7 +1,6 @@
 # weakMap，weakSet，set，map
 
 
------
 ## set
 
 集合是由一组**无序且唯一(即不能重复)的项**组成的，可以想象成集合是一个既没有重复元素，也没有顺序概念的数组。
@@ -103,7 +102,7 @@ ECMAScript 6 新增的“**弱集合**”（WeakSet）是一种新的集合类�
 
 
 
-具体可以前往JavaScript的[weakMap](https://www.rorrot.cc/articles/JavaScript/Weakmap.html)和[weakSet](https://www.rorrot.cc/articles/JavaScript/WeakSet.html)。
+具体可以前往JavaScript的[weakMap](https://www.rorrot.cc/articles/JavaScript/WeakMap.html)和[weakSet](https://www.rorrot.cc/articles/JavaScript/WeakSet.html)。
 
 
 

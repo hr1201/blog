@@ -1,4 +1,4 @@
-# TS进阶用法proxy&Reflect
+# proxy和Reflect
 
 ES6 中的 Proxy 和 Reflect 是两个新的内置对象，它们都是用于拦截并改变对象行为。
 
