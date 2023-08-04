@@ -16,7 +16,7 @@
 
 Vuex 提供了一个叫做 **Vuex Persistedstate** 的插件，可以将应用的状态持久化到本地存储中。使用 Vuex Persistedstate 插件非常简单，只需要在创建 Vuex store 时将其作为插件传入即可。下面是一个使用 Vuex Persistedstate 插件的示例：
 
-```js
+```JavaScript
 import Vuex from 'vuex'
 import createPersistedState from 'vuex-persistedstate'
 

@@ -22,7 +22,7 @@ Vue3中用于创建VNode的函数`createVNode`接受三个参数：标签名、�
 
 例如，如果我们想创建一个`<div>`标签的虚拟DOM节点，可以使用如下代码:
 
-```javascript
+```typescript
 const vnode = createVNode('div', { class: 'container' }, 'Hello, Vue 3!'); 
 ``` 
 
@@ -33,7 +33,7 @@ const vnode = createVNode('div', { class: 'container' }, 'Hello, Vue 3!');
 
 看Vue3源码：
 
-```javascript
+```typescript
 
   // 没有key的diff算法
   const patchUnkeyedChildren = (
@@ -106,7 +106,7 @@ const vnode = createVNode('div', { class: 'container' }, 'Hello, Vue 3!');
 ## 有key 的diff算法
 看vue3源代码：
 
-```javascript
+```typescript
 
 // 有key的diff算法
   // can be all-keyed or mixed
@@ -376,7 +376,7 @@ const vnode = createVNode('div', { class: 'container' }, 'Hello, Vue 3!');
 ## 赋值给**新虚拟节点**时使用的函数
 看vue3源代码：
 
-```javascript
+```typescript
 export function normalizeVNode(child: VNodeChild): VNode {
   if (child == null || typeof child === 'boolean') {
     // empty placeholder
@@ -412,7 +412,7 @@ export function cloneIfMounted(child: VNode): VNode {
 ## 最长递增子序列
 最长递增子序列目的是在一个给定的数值序列中，找到一个子序列，使得这个子序列元素的数值**依次递增**，并且这个子序列的**长度尽可能地大**，[算法示例执行过程](https://www.wikiwand.com/en/File:LISDemo.gif)，在vue3中传入新节点在旧节点的位置数组至以下函数，获取到升序的递增子序列(由乱序转为有序)，看vue3源代码：
 
-```javascript
+```typescript
 // [https://en.wikipedia.org/wiki/Longest_increasing_subsequence](https://en.wikipedia.org/wiki/Longest_increasing_subsequence)
 // 贪心+二分，最长递增子序列算法，即找到最长的升序子序列
 function getSequence(arr: number[]): number[] {

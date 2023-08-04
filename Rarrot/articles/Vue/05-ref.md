@@ -8,7 +8,7 @@
 
 **ref**跟vue2的以下这段代码是一个意思，也就是创建响应式数据：
 
-```
+```Vue
 <template>
   <div>
 
@@ -33,7 +33,7 @@ export default{
 
 ### 使用ref去写则是这样的：
 
-```
+```Vue
 <template>
   <div>
     ref {{ rarrot }}
@@ -80,7 +80,7 @@ const change = () => {
 
 通过`triggerRef(rarrot2)`和`rarrot2.value={` `name:'nihao2'` `}`这两种方式会更新收集的依赖，也就是视图的更新，看代码：
 
-```
+```Vue
 <template>
   <div>
     shallowRef {{ rarrot2 }}
@@ -130,7 +130,7 @@ const change = () => {
 
 通过使用 customRef，你可以**完全控制响应式数据的依赖追踪和触发更新的逻辑**。这对于实现一些特定的响应式行为或处理复杂的数据情况非常有用。看代码：
 
-```
+```Vue
 <template>
   <div>
     customRef {{ rarrot3 }}
@@ -211,7 +211,7 @@ const change = () => {
 
 看代码：
 
-```
+```Vue
 <template>
   <div ref="domm">
     我是domm
@@ -310,9 +310,9 @@ class RefImpl<T> {
     // isReadonly(newVal)判断传入的值是否为只读响应式对象
     // 只要三个条件中有一个为true，useDirectValue就为true
     const useDirectValue =this.__v_isShallow || isShallow(newVal) || isReadonly(newVal)
-   `    // 当useDirectValue为false，也就是为深层次响应对象时，就将其转换为原始对象
+       // 当useDirectValue为false，也就是为深层次响应对象时，就将其转换为原始对象
     newVal = useDirectValue ? newVal : toRaw(newVal)
-   `    // 这里比较原始对象
+       // 这里比较原始对象
     if (hasChanged(newVal, this._rawValue)) {
       this._rawValue = newVal
       this._value = useDirectValue ? newVal : toReactive(newVal)
@@ -349,10 +349,10 @@ export type ShallowRef<T = any> = Ref<T> & { [ShallowRefMarker]?: true }
  * ```js
  * const state = shallowRef({ count: 1 })
  *
-` * // 这不会触发响应式系统的变化
+ * // 这不会触发响应式系统的变化
  * state.value.count = 2
  *
-` * // 这会触发响应式系统的变化
+ * // 这会触发响应式系统的变化
  * state.value = { count: 2 }
  * ```
  *
@@ -421,10 +421,9 @@ rarrot2.value.name='nihao2'
 ```typescript
 set value(newVal) {
 
-   `    ...
+    ...
 
   // 当useDirectValue为true，也就是为深层次响应对象时，就将其转换为原始对象
-
 
     newVal = useDirectValue ? newVal : toRaw(newVal)
 
