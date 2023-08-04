@@ -72,6 +72,8 @@
   --vp-custom-block-tip-text: var(--vp-c-brand-darker);
   --vp-custom-block-tip-bg: var(--vp-c-brand-dimm);
   --vp-inverted-image-filter: var(--vp-inverted-image-lighter-filter);
+  --vp-c-text-code: #c7254e;
+  --vp-c-mute: #f9f2f4;
 }
 
 .dark {
@@ -79,6 +81,8 @@
   --vp-custom-block-tip-text: var(--vp-c-brand-lightest);
   --vp-custom-block-tip-bg: var(--vp-c-brand-dimm);
   --vp-inverted-image-filter: var(--vp-inverted-image-dark-filter);
+  --vp-c-text-code: #c7254e;
+  --vp-c-mute: #313136;
 }
 
 /**

@@ -66,5 +66,7 @@ watch(
 	background-color: #ffffff;
 	padding: 20px 0;
 	border-radius: 10px;
+	margin: 15px 0;
+	padding: 10px 13px 0px 13px;
 }
 </style>
