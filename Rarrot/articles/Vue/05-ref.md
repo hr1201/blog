@@ -448,11 +448,11 @@ export const hasChanged = (value: any, oldValue: any): boolean =>
 
 ② 这里直接比较浅层次响应式对象的话，比较的是引用，新值的引用和旧值的引用，在只改变属性的情况下，还是一样的。
 
+但是如果通过rarrot2.value={ name:'nihao2' }，则改变了引用，所以就会调用if里面的条件了。
 
-③ 在`toReactive(newVal)`方法中也会去判断newVal是否为引用类型，不是的话就直接返回传过来的值。
 
 
-但是如果通过rarrot2.value={ name:'nihao2' }，则改变了引用，所以就会调用if里面的条件了
+
 
 
 
