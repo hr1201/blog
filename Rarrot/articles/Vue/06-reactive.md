@@ -276,9 +276,9 @@ state.a = 7
 ```typescript
 /**
  *
-` * 返回响应式proxy对象。
+ * 返回响应式proxy对象。
  *
-` * 响应式转换是“deep”的：它影响所有嵌套属性。 A
+ * 响应式转换是“deep”的：它影响所有嵌套属性。 A
  * 响应式对象还会深度解开任何作为 refs 的属性，同时
  * 保持反应活性。
  * @example
@@ -423,7 +423,7 @@ function getTargetType(value: Target) {
 
 
 ```typescript
-//__v_skip会在后面篇章中的markRaw有所讲解
+//__v_skip会在to系列篇章中的源码解析toRaw有所讲解
 export const enum ReactiveFlags {
   SKIP = '__v_skip',
   IS_REACTIVE = '__v_isReactive',
