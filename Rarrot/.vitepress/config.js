@@ -25,29 +25,12 @@ export default defineConfig({
       message: 'Released under the MIT License.',
       copyright: `Copyright © 2023.4-${new Date().getFullYear()}.${new Date().getMonth() + 1}`,
     },
-    search: {
-      provider: 'local',
-      options: {
-        locales: {
-          zh: {
-            translations: {
-              button: {
-                buttonText: '搜索文档',
-                buttonAriaLabel: '搜索文档'
-              },
-              modal: {
-                noResultsText: '无法找到相关结果',
-                resetButtonTitle: '清除查询条件',
-                footer: {
-                  selectText: '选择',
-                  navigateText: '切换'
-                }
-              }
-            }
-          }
-        }
-      }
+    algolia: {
+      appId: 'A5NVAQQUEO',
+      apiKey: 'fa9cdd39aee827af75ca9ead469cec1b',
+      indexName: 'rorrot',
     },
+
     lastUpdatedText: '更新日期',
     docFooter: {
       prev: '上一页',
