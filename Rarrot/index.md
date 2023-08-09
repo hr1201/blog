@@ -29,7 +29,12 @@ features:
     details: fuck*
 ---
 
-<!-- <homeBackground /> -->
+<script setup>
+import home from './.vitepress/theme/components/home.vue'
+
+</script>
+
+<home />
 
 
 

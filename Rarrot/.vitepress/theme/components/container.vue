@@ -1,69 +1,51 @@
 <template>
-	<div class="comments">
-		<component
+      <div class="comments">
+        <Giscus
 			v-if="showComment"
 			src="https://giscus.app/client.js"
 			:is="'script'"
 			:key="title"
-			:data-repo="giscusConfig.repo"
-			:data-repo-id="giscusConfig.repoId"
-			:data-category="giscusConfig.category"
-			:data-category-id="giscusConfig.categoryId"
-			:data-mapping="giscusConfig.mapping"
-			:data-strict="giscusConfig.strict"
-			:data-reactions-enabled="giscusConfig.reactionsEnabled"
-			:data-emit-metadata="giscusConfig.emitMetadata"
-			:data-input-position="giscusConfig.inputPosition"
-			:data-lang="giscusConfig.lang"
-			:data-theme="giscusConfig.theme"
-			:data-loading="giscusConfig.loading"
-            :data-crossorign="giscusConfig.crossorign"
-		/>
-	</div>
+			repo= "hr1201/gitalk-evalute"
+			repo-id= "R_kgDOJ9WSwA"
+			category= "Announcements"
+			category-id="DIC_kwDOJ9WSwM4CYA7u"
+			mapping="pathname"
+			strict="0"
+			reactions-enabled="1"
+			emit-metadata="0"
+			input-position="bottom"
+			:theme="isDark ? 'transparent_dark' : 'light'"
+			lang="zh-CN"
+			loading="lazy"
+        />
+      </div>
 </template>
-<script lang="ts" setup>
+
+<script setup>
+import { useData,useRoute } from 'vitepress'
+import Giscus from '@giscus/vue'
 import { reactive, ref, watch } from "vue";
-import { useData, useRoute } from "vitepress";
 
+const { isDark,title } = useData()
 const route = useRoute();
-
-const { title } = useData();
-
-// params generate in https://giscus.app/zh-CN
-const giscusConfig = reactive({
-	repo: "hr1201/gitalk-evalute",
-	repoId: "R_kgDOJ9WSwA",
-	category: "Announcements",
-	categoryId: "DIC_kwDOJ9WSwM4CYA7u",
-	mapping: "title",
-	strict: "0",
-	reactionsEnabled: "1",
-	emitMetadata: "0",
-	inputPosition: "top",
-	theme: "preferred_color_scheme",
-	lang: "zh-CN",
-	loading: "lazy",
-    crossorign:'anonymous'
-});
 
 const showComment = ref(true);
 watch(
 	() => route.path,
-	() => {
-		showComment.value = false;
-		setTimeout(() => {
-			showComment.value = true;
-		}, 200);
-	},
+	// () => {
+	// 	showComment.value = false;
+	// 	setTimeout(() => {
+	// 		showComment.value = true;
+	// 	}, 200);
+	// },
 	{
 		immediate: true,
 	}
 );
 </script>
-<style>
-/* // TODO 使用giscus自定义主题结合vitepress主题切换 */
+
+<style scoped>
 .comments {
-	background-color: #ffffff;
 	padding: 20px 0;
 	border-radius: 10px;
 	margin: 15px 0;

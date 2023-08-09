@@ -74,15 +74,16 @@ export default defineConfig({
       // },
     ],
     nav: [
-      // { text: 'Home', link: '/' },
       {
-        text: '博客',
+        text: '前端',
         items: [
           { text: "JavaScript", link: "/articles/JavaScript/生成器" },
           { text: "typescript", link: "/articles/typescript/01-基础类型" },
           { text: "Vue", link: "/articles/Vue/01-Vue3基础语法" },
         ],
-      }
+      },
+      { text: '动画', link: '/cartoonsMD/欢迎' },
+
     ],
     sidebar: {
       // 定义"/articles/" 将此配置为路径，只有包含这个路径的才会出现侧边栏
@@ -94,6 +95,10 @@ export default defineConfig({
       ),
       "/articles/Vue": sidebarAuto(
         path.resolve(__dirname, "../articles/Vue"),
+      ),
+      "/cartoonsMD":sidebarAuto(
+        path.resolve(__dirname, "../cartoonsMD"),
+        '动画'
       ),
     }
 
