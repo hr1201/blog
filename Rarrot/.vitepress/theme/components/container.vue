@@ -2,7 +2,6 @@
       <div class="comments">
         <Giscus
 			v-if="showComment"
-			src="https://giscus.app/client.js"
 			:is="'script'"
 			:key="title"
 			repo= "hr1201/gitalk-evalute"
@@ -32,12 +31,12 @@ const route = useRoute();
 const showComment = ref(true);
 watch(
 	() => route.path,
-	// () => {
-	// 	showComment.value = false;
-	// 	setTimeout(() => {
-	// 		showComment.value = true;
-	// 	}, 200);
-	// },
+	() => {
+		showComment.value = false;
+		setTimeout(() => {
+			showComment.value = true;
+		}, 50);
+	},
 	{
 		immediate: true,
 	}
