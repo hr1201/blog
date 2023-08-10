@@ -6,6 +6,7 @@ import containers from './components/container.vue'
 import homeBackground from './components/homeBackground.vue'
 import test from './components/test.vue'
 import findCount from './components/findCount.vue'
+import block from './components/cartoons/animationBlock.vue'
 
 export default {
   ...Theme,
@@ -22,5 +23,6 @@ export default {
       .component('homeBackground', homeBackground)
       .component('test', test)
       .component('findCount',findCount)
+      .component('block',block)
   }
 }

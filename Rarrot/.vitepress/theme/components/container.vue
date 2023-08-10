@@ -27,19 +27,24 @@ import { reactive, ref, watch } from "vue";
 
 const { isDark,title } = useData()
 const route = useRoute();
-
+console.log()
 const showComment = ref(true);
 watch(
 	() => route.path,
 	() => {
 		showComment.value = false;
-		setTimeout(() => {
-			showComment.value = true;
-		}, 50);
+		if(route.path.includes('cartoonsMD')){
+			showComment.value=false
+		}else{
+			setTimeout(() => {
+				showComment.value = true;
+			}, 50);
+		}	
 	},
 	{
 		immediate: true,
 	}
+
 );
 </script>
 

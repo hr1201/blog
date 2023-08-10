@@ -10,6 +10,8 @@ import { ref, reactive } from 'vue'
 <style scoped>
 .inverted-image {
     filter: invert(var(--vp-inverted-image-filter));
+    width: 145px;
+    height: 20px;
 }
 
 

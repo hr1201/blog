@@ -13,13 +13,5 @@
 import { ref, reactive } from 'vue'
 </script>
 <style scoped>
-#__next{
-    display: none;
-}
-.comments{
-    display: none;
-}
-.gicus{
-    display: none;
-}
+
 </style>
