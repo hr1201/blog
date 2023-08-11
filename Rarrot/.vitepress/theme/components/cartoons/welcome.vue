@@ -28,12 +28,12 @@ import { ref, reactive } from 'vue'
 
 .container {
     display: flex;
+    justify-content: center;
+    align-items: center;
     /*   border:1px solid red; */
     height: 100%;
     width: 100%;
-    align-items: center;
     font-family: Arial;
-
 }
 
 svg {
@@ -54,27 +54,27 @@ svg {
 }
 
 .text-copy:nth-child(1) {
-    stroke: #4D163D;
+    stroke: #001088;
     animation-delay: -1;
 }
 
 .text-copy:nth-child(2) {
-    stroke: #840037;
+    stroke: #0024a5;
     animation-delay: -2s;
 }
 
 .text-copy:nth-child(3) {
-    stroke: #BD0034;
+    stroke: #3e52e0;
     animation-delay: -3s;
 }
 
 .text-copy:nth-child(4) {
-    stroke: #BD0034;
+    stroke: #3e52e0;
     animation-delay: -4s;
 }
 
 .text-copy:nth-child(5) {
-    stroke: #FDB731;
+    stroke: #646cff;
     animation-delay: -5s;
 }
 
