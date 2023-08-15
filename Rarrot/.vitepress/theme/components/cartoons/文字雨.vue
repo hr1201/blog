@@ -6,12 +6,10 @@
   
 <script setup>
 import { ref, onMounted,onUnmounted } from 'vue'
-import { useRoute } from 'vitepress'
 
 // 代码雨
 let canvas = ref()
 let ctx
-let route = useRoute();
 let intervalId; // 用于存储 setInterval 的返回值
 
 // 获取画布的 2D 渲染上下文
@@ -41,9 +39,7 @@ onMounted(() => {
         });
     };
 
-    if (canvas.value && route.path.includes('%E6%96%87%E5%AD%97%E9%9B%A8')) {
-        intervalId = setInterval(rain, 40);
-    }
+    intervalId = setInterval(rain, 40);
 })
 
 onUnmounted(() => {
