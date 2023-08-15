@@ -6,13 +6,13 @@
     </div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="tsx">
 import { reactive } from 'vue'
 
 const props =defineProps({
     color: {
         type: String,
-        default: ''
+        default: 'rgba(0,0,0,0.9)'
     }
 })
 

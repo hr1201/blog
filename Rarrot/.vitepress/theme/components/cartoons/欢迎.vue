@@ -1,6 +1,6 @@
 <template>
     <div>
-        <block color="black">
+        <block>
             <div class="container">
                 <svg viewBox="0 0 960 300">
                     <symbol id="s-text">
@@ -20,7 +20,7 @@
     </div>
 </template>
 
-<script setup lang='ts'>
+<script setup lang='tsx'>
 import { ref, reactive } from 'vue'
 </script>
 <style scoped>
@@ -28,10 +28,10 @@ import { ref, reactive } from 'vue'
 
 .container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
     /*   border:1px solid red; */
-    height: 100%;
+    height: 90%;
     width: 100%;
     font-family: Arial;
 }
@@ -39,8 +39,6 @@ import { ref, reactive } from 'vue'
 svg {
     display: block;
     font: 5em 'Montserrat';
-    width: 47vw;
-    height: 65vh;
     margin: 0 auto;
 }
 
@@ -89,4 +87,13 @@ svg {
         width: 69vw;
     }
 }
+
+/* @media (max-width: 560px) {
+    svg {
+        width: 65vw;
+        height: 48vh;
+        transform: rotate(90deg);
+        margin: auto 0;
+    }
+} */
 </style>

@@ -65,7 +65,7 @@ export default defineConfig({
           { text: "Vue", link: "/articles/Vue/01-Vue3基础语法" },
         ],
       },
-      { text: '动画', link: '/cartoonsMD/欢迎' },
+      { text: '动画', link: '/cartoonsMD/.欢迎' },
 
     ],
     sidebar: {
