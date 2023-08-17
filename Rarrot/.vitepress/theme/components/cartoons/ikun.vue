@@ -12,7 +12,7 @@ import { ref, onMounted } from 'vue'
 const basketball = ref();
 
 const bounceAnimation = () => {
-    basketball.value.style.animation = 'bounce-1d47093f 0.5s forwards';
+    basketball.value.style.animation = 'bounce 0.5s forwards';
     setTimeout(() => {
         if (basketball.value.style.animation != '') {
             basketball.value.style.animation = ''
@@ -23,7 +23,8 @@ const bounceAnimation = () => {
 
 </script>
 
-<style scoped>
+<!-- 注意这里没有添加scoped。原因为添加之后，会自动分配一个哈希值，动画也会添加一个哈希值，这样在点击时会获取不到动画 -->
+<style>
 .ikun {
     width: 100%;
     height: 100%;
@@ -42,6 +43,9 @@ const bounceAnimation = () => {
     transform-origin: center bottom;
 }
 
+/* .basketball ::v-deep {
+    animation: bounce 0.5s forwards;
+} */
 @keyframes bounce {
 
     from,
