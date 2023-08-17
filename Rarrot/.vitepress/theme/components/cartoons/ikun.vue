@@ -1,43 +1,46 @@
 <template>
-    <block>
+    <block color="rgba(256,256,256,0.1)">
         <div class="ikun">
-            <img id="cxk" class="cxk" src="https://aikun.one/api/file/0420b310-ec66-43b3-b00e-3058ff6bb35c" alt="">
-            <img id="basketballs" class="basketball" src="https://gcubot.cn/wp-content/uploads/2023/07/basketball.png"
-                alt="">
+            <img @click="bounceAnimation" ref="basketball" class="basketball" src="./images/basketball.png" alt="">
         </div>
     </block>
 </template>
 
 <script setup lang='ts'>
-import { ref, reactive } from 'vue'
-</script>
-<style scoped>
-.ikun {
-    width: 200px;
-    height: 200px;
-    display: flex;
+import { ref, onMounted } from 'vue'
+
+const basketball = ref();
+
+const bounceAnimation = () => {
+    basketball.value.style.animation = 'bounce-1d47093f 0.5s forwards';
+    basketball.value.addEventListener('animationend', () => {
+        basketball.value.style.animation = '';
+    }, { once: true });
 }
 
-.cxk {
-    margin-bottom: 10px;
-    position: relative;
-    top: 5%;
-    left: 30%;
-    width: 120px;
-    height: 200px;
+</script>
+
+<style scoped>
+.ikun {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-image: url(./images/ikun.svg);
+    background-repeat: repeat-x;
+    background-position: center;
 }
 
 .basketball {
     position: relative;
-    left: 15%;
-    top: 14%;
+    left: 52%;
+    top: 28%;
     width: 45px;
     height: 45px;
     transform-origin: center bottom;
+    animation: bounce 0.5s forwards;
 }
 
 @keyframes bounce {
-
     from,
     20%,
     53%,
@@ -64,6 +67,18 @@ import { ref, reactive } from 'vue'
 
     90% {
         transform: translate3d(0, -4px, 0) scaleY(1.02);
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .basketball {
+        left: 53%;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .basketball {
+        left: 55%;
     }
 }
 </style>

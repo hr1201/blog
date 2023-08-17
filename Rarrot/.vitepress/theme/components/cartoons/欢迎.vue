@@ -82,11 +82,6 @@ svg {
     }
 }
 
-@media screen and (max-width: 960px) {
-    svg{
-        width: 69vw;
-    }
-}
 
 /* @media (max-width: 560px) {
     svg {

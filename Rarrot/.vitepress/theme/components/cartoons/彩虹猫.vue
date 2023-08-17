@@ -5,10 +5,24 @@
 </template>
 
 <script setup lang='ts'>
-import { ref } from 'vue'
-const text = ref();
+import { ref, onMounted } from 'vue'
 
-text.value = Array(50).fill(Math.random() * 1234567890 + 100000).reduce((str, item) => str + parseInt(item).toString(2), '')
+const text = ref('');
+
+function setTextValue() {
+    if (window.matchMedia('(max-width: 580px)').matches) {
+        text.value = Array(50).fill(Math.random() * 12345 + 12000).reduce((str, item) => str + parseInt(item).toString(2), '');
+    } else if(window.matchMedia('(max-width: 750px)').matches) {
+        text.value = Array(50).fill(Math.random() * 1234567 + 10000).reduce((str, item) => str + parseInt(item).toString(2), '');
+    }else{
+        text.value = Array(50).fill(Math.random() * 123456789 + 10000).reduce((str, item) => str + parseInt(item).toString(2), '');
+    }
+}
+
+onMounted(() => {
+    setTextValue();
+    window.addEventListener('resize', setTextValue);
+});
 
 </script>
 <style scoped>

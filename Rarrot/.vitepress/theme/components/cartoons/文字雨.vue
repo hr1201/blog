@@ -49,15 +49,9 @@ onUnmounted(() => {
   
 <style scoped>
 canvas {
-    width: 48vw;
-    height: 65vh;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.90);
     transition: 0.25s ease;
-}
-
-@media screen and (max-width: 960px) {
-    canvas {
-        width: 70vw;
-    }
 }
 </style>
