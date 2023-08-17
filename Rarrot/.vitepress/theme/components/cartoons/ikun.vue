@@ -13,9 +13,12 @@ const basketball = ref();
 
 const bounceAnimation = () => {
     basketball.value.style.animation = 'bounce-1d47093f 0.5s forwards';
-    basketball.value.addEventListener('animationend', () => {
-        basketball.value.style.animation = '';
-    }, { once: true });
+    setTimeout(() => {
+        if (basketball.value.style.animation != '') {
+            basketball.value.style.animation = ''
+        }
+    }, 500)
+
 }
 
 </script>
@@ -37,10 +40,10 @@ const bounceAnimation = () => {
     width: 45px;
     height: 45px;
     transform-origin: center bottom;
-    animation: bounce 0.5s forwards;
 }
 
 @keyframes bounce {
+
     from,
     20%,
     53%,
