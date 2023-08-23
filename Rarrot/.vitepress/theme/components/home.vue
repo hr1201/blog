@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="blocks">
         <div></div>
         <p></p>
         <p></p>

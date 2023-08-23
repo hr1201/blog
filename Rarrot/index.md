@@ -7,7 +7,7 @@ hero:
   text: "个人博客网站"
   tagline: 
   image:
-    # src: Rarrot
+    src: ./white-cloud.png
     alt: Rarrot
   actions:
     - theme: brand
@@ -29,12 +29,12 @@ features:
     details: fuck*
 ---
 
-<script setup>
+<!-- <script setup>
 import home from './.vitepress/theme/components/home.vue'
 
 </script>
 
-<home />
+<home /> -->
 
 
 
