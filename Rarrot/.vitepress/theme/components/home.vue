@@ -12,7 +12,7 @@
                     <img src="https://cdn.staticaly.com/gh/hr1201/img@main/imgs/202308241052495.png" alt="cartoon-img">
                 </div>
                 <div class="blocks-text">
-                    <p style="font-size:15px;color:#3e52e0;">weicome</p>
+                    <p style="font-size:15px;color:#3e52e0;">welcome</p>
                     <p>欢迎来到Rarrot的动画库</p>
                     <div class="blocks-url">
                         <a href="https://www.rorrot.cc/cartoonsMD/O.o%E6%AC%A2%E8%BF%8E.html">Visit</a>
@@ -125,9 +125,9 @@ console.log()
 }
 
 /* 小于960px会增加return-top那一栏并且不会透明 */
-@media (max-width: 640px) {
+@media (max-width: 740px) {
     .blocks {
-        width: 70%;
+        width: 80%;
         margin: auto;
     }
 }
