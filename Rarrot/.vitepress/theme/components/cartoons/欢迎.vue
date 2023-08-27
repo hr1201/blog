@@ -3,10 +3,12 @@
         <block>
             <div class="container">
                 <svg viewBox="0 0 960 300">
+                    <!-- 用于存储文本路径 -->
                     <symbol id="s-text">
                         <text text-anchor="middle" x="50%" y="80%">欢迎来到Rarrot的动画库</text>
                     </symbol>
 
+                    <!-- 使用<g>元素创建了五个文本副本，每个副本都引用<symbol>中定义的文本路径 -->
                     <g class="g-ants">
                         <use xlink:href="#s-text" class="text-copy"></use>
                         <use xlink:href="#s-text" class="text-copy"></use>
@@ -42,6 +44,7 @@ svg {
     margin: 0 auto;
 }
 
+/* 设置stroke-dasharray、stroke-dashoffset和animation属性，实现文本描边的动画效果 */
 .text-copy {
     fill: none;
     stroke: white;
