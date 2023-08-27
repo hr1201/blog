@@ -17,24 +17,24 @@ hero:
       text: 示例
       link: /articles/hello
 
-features:
-  - icon: ⚡️
-    title: 这是一个闪电图标
-    details: wa
-  - icon: 🖖
-    title: 这是一个手掌图标
-    details: good！
-  - icon: 🛠️
-    title: 这是一个修理图标
-    details: fuck*
+# features:
+#   - icon: ⚡️
+#     title: 这是一个闪电图标
+#     details: wa
+#   - icon: 🖖
+#     title: 这是一个手掌图标
+#     details: good！
+#   - icon: 🛠️
+#     title: 这是一个修理图标
+#     details: fuck*
 ---
 
-<!-- <script setup>
+<script setup>
 import home from './.vitepress/theme/components/home.vue'
 
 </script>
 
-<home /> -->
+<home />
 
 
 

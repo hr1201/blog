@@ -28,8 +28,8 @@ import { ref, reactive } from 'vue'
 
 .container {
     display: flex;
-    /* justify-content: center;
-    align-items: center; */
+    justify-content: center;
+    align-items: center;
     /*   border:1px solid red; */
     height: 90%;
     width: 100%;

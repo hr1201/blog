@@ -60,6 +60,7 @@ export default defineConfig({
       {
         text: '前端',
         items: [
+          { text: "css", link: "/articles/css/弹性布局" },
           { text: "JavaScript", link: "/articles/JavaScript/生成器" },
           { text: "typescript", link: "/articles/typescript/01-基础类型" },
           { text: "Vue", link: "/articles/Vue/01-Vue3基础语法" },
@@ -69,8 +70,11 @@ export default defineConfig({
 
     ],
     sidebar: {
+      "/articles/css": sidebarAuto(
+        path.resolve(__dirname, "../articles/css"),
+      ),
       // 定义"/articles/" 将此配置为路径，只有包含这个路径的才会出现侧边栏
-      "/articles": sidebarAuto(
+      "/articles/JavaScript": sidebarAuto(
         path.resolve(__dirname, "../articles/JavaScript"),
       ),
       "/articles/typescript": sidebarAuto(
