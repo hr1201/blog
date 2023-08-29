@@ -91,9 +91,14 @@ export default defineConfig({
       "/articles/typescript": sidebarAuto(
         path.resolve(__dirname, "../articles/typescript"),
       ),
+      
       "/articles/Vue": sidebarAuto(
         path.resolve(__dirname, "../articles/Vue"),
-      ),
+      ).concat(sidebarAuto(
+        path.resolve(__dirname, "../articles/Vue/问题"),
+        "问题"
+      )),
+      
       "/cartoonsMD": sidebarAuto(
         path.resolve(__dirname, "../cartoonsMD"),
         '动画'
