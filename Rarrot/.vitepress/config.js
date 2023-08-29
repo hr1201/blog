@@ -61,7 +61,7 @@ export default defineConfig({
         text: '前端',
         items: [
           { text: "HTML", link: "/articles/HTML/浏览器渲染过程" },
-          { text: "css", link: "/articles/css/弹性布局" },
+          { text: "css", link: "/articles/css/css工作流程" },
           { text: "JavaScript", link: "/articles/JavaScript/0认识JavaScript" },
           { text: "typescript", link: "/articles/typescript/01-基础类型" },
           { text: "Vue", link: "/articles/Vue/01-Vue3基础语法" },
