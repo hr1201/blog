@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: brand
       text: 我的博客
-      link: /articles/JavaScript/生成器
+      link: /articles/JavaScript/0认识JavaScript
     - theme: alt
       text: 示例
       link: /articles/hello

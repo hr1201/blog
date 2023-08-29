@@ -71,7 +71,7 @@ interface person {
 const target: person = { name: "rarrot", age: 66 };
 const handler = {
     get(target: person, prop: keyof person) {
-        console.log(`获得${prop}`);
+        console.log(`获取${prop}`);
         return Reflect.get(target, prop);
     },
     set(target: person, prop: keyof person, value: any) {

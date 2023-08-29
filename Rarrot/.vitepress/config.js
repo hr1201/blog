@@ -60,32 +60,47 @@ export default defineConfig({
       {
         text: '前端',
         items: [
+          { text: "HTML", link: "/articles/HTML/浏览器渲染过程" },
           { text: "css", link: "/articles/css/弹性布局" },
-          { text: "JavaScript", link: "/articles/JavaScript/生成器" },
+          { text: "JavaScript", link: "/articles/JavaScript/0认识JavaScript" },
           { text: "typescript", link: "/articles/typescript/01-基础类型" },
           { text: "Vue", link: "/articles/Vue/01-Vue3基础语法" },
         ],
       },
+      { text: '工具', link: '/articles/工具/nvm' },
       { text: '动画', link: '/cartoonsMD/O.o欢迎' },
 
     ],
     sidebar: {
+      "/articles/HTML": sidebarAuto(
+        path.resolve(__dirname, "../articles/HTML"),
+      ),
       "/articles/css": sidebarAuto(
         path.resolve(__dirname, "../articles/css"),
       ),
+
       // 定义"/articles/" 将此配置为路径，只有包含这个路径的才会出现侧边栏
       "/articles/JavaScript": sidebarAuto(
         path.resolve(__dirname, "../articles/JavaScript"),
-      ),
+        "JavaScript"
+      ).concat(sidebarAuto(
+        path.resolve(__dirname, "../articles/JavaScript/问题"),
+        "问题"
+      )),
+
       "/articles/typescript": sidebarAuto(
         path.resolve(__dirname, "../articles/typescript"),
       ),
       "/articles/Vue": sidebarAuto(
         path.resolve(__dirname, "../articles/Vue"),
       ),
-      "/cartoonsMD":sidebarAuto(
+      "/cartoonsMD": sidebarAuto(
         path.resolve(__dirname, "../cartoonsMD"),
         '动画'
+      ),
+      "/articles/工具": sidebarAuto(
+        path.resolve(__dirname, "../articles/工具"),
+        '工具'
       ),
     }
 

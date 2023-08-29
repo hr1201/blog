@@ -1,15 +1,9 @@
-// const path = require("path");
-// const { useData } = require('vitepress')
+const path = require("path");
 const dirTree = require("directory-tree");
-
-// params is a Vue ref
-// const { params } = useData()
-
-// console.log(params.value)
 
 function toSidebarOption(tree = []) {
   if (!Array.isArray(tree)) return [];
-
+  // console.log(tree)
   return tree.map((v) => {
     if (v.children !== undefined) {
       return {
@@ -27,6 +21,23 @@ function toSidebarOption(tree = []) {
   });
 }
 
+// 如果第一段列表具有items属性，将不推入itemsWithData
+function findItemsWithData(items) {
+  const itemsWithData = [];
+
+  function traverse(items) {
+    for (const item of items) {
+      if (!item.items) {
+        itemsWithData.push(item);
+      }
+    }
+  }
+
+  traverse(items);
+
+  return itemsWithData;
+}
+
 
 function sidebarAuto(srcPath, title) {
   const srcDir = dirTree(srcPath, {
@@ -34,20 +45,35 @@ function sidebarAuto(srcPath, title) {
     normalizePath: true,
   });
 
+  const sidebarItems = toSidebarOption(srcDir.children);  
+
+  const itemsWithData = findItemsWithData(sidebarItems);
+  // console.log(itemsWithData);
 
   return [
     {
       // 判断title有没有值，有就使用传入的title值
-      text: title == undefined ?  srcDir.name : title ,
+      text: title == undefined ? srcDir.name : title,
       collapsible: true,
       collapsed: true,
-      items: toSidebarOption(srcDir.children),
+      items: itemsWithData,
     },
   ];
 
 }
-// let a=sidebarAuto(path.resolve(__dirname, "../articles/typescript"),
-// "typescript")
-// console.log(a[0])
+
+
+// let a = sidebarAuto(path.resolve(__dirname, "../articles/JavaScript"),
+//   "JavaScript"
+// ).concat(sidebarAuto(
+//   path.resolve(__dirname, "../articles/JavaScript/问题"),
+//   "问题"
+// ).concat(sidebarAuto(
+//   path.resolve(__dirname, "../articles/JavaScript/你好"),
+//   "你好"
+// )))
+// console.log(a.forEach((value) => {
+//   // console.log(value)
+// }))
 
 module.exports = sidebarAuto;
