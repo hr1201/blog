@@ -5,7 +5,10 @@ const path = require("path");
 export default defineConfig({
   title: "Rarrot",
   description: "Rarrot的个人博客网站",
-  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['meta', { name: 'baidu-site-verification', content: 'codeva-90hqhBZdbA' }]
+  ],
   lastUpdated: true,
   // cleanUrls: true,
   markdown: {
