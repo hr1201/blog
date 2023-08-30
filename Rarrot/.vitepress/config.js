@@ -25,8 +25,8 @@ export default defineConfig({
 
   // 用于生成sitemap
   buildEnd: async ({ outDir }) => {
-    const sitemap = new SitemapStream({ hostname: 'https://laros.io/' })
-    const pages = await createContentLoader('*.md').load()
+    const sitemap = new SitemapStream({ hostname: 'https:/www.rorrot.cc/' })
+    const pages = await createContentLoader(["**/*.md"]).load()
     const writeStream = createWriteStream(resolve(outDir, 'sitemap.xml'))
 
     sitemap.pipe(writeStream)
