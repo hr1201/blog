@@ -7,7 +7,7 @@ import { createWriteStream } from 'node:fs'
 import { resolve } from 'node:path'
 
 const path = require("path");
-
+const links = [];
 export default defineConfig({
   title: "Rarrot",
   description: "Rarrot的个人博客网站",
@@ -24,21 +24,22 @@ export default defineConfig({
   },
 
   // 用于生成sitemap
+  transformHtml: (_, id, { pageData }) => {
+    if (!/[\\/]404\.html$/.test(id)) {
+      links.push({
+        url: pageData.relativePath.replace(/\/index\.md$/, '/').replace(/\.md$/, '.html'),
+        lastmod: pageData.lastUpdated,
+      })
+    }
+  },
   buildEnd: async ({ outDir }) => {
-    const sitemap = new SitemapStream({ hostname: 'https:/www.rorrot.cc/' })
-    const pages = await createContentLoader(["**/*.md"]).load()
+    const sitemap = new SitemapStream({
+      hostname: 'https://rorrot.cc/'
+    })
     const writeStream = createWriteStream(resolve(outDir, 'sitemap.xml'))
-
     sitemap.pipe(writeStream)
-    pages.forEach((page) => sitemap.write(
-      page.url
-        // Strip `index.html` from URL
-        .replace(/index.html$/g, '')
-        // Optional: if Markdown files are located in a subfolder
-        .replace(/^\/Rarrot/, '')
-      ))
+    links.forEach((link) => sitemap.write(link))
     sitemap.end()
-
     await new Promise((r) => writeStream.on('finish', r))
   },
 
