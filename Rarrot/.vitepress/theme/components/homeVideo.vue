@@ -5,7 +5,7 @@
             <h1>个人博客网站<br><span>Rarrot</span></h1>
             <p>去成为你想成为的人，什么时候都可以开始；去做你想做的事，任何方向都值得努力。追梦路上，没有不受重力的飞翔。吝惜汗水和能量，哪一条路都是弯路；朝着目标努力前进，整个世界都会为你让路。以后那么长，不是想出来的，是过出来的。
             </p>
-            <a href="#">我的博客</a>
+            <a href="/articles/JavaScript/0认识JavaScript.html">我的博客</a>
         </div>
         <div class="social">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -148,7 +148,7 @@ section {
     z-index: 15;
     content: '';
     position: absolute;
-    background: rgba(8, 54, 8, 0.3);
+    background: rgba(37, 21, 4, 0.3);
     width: 100%;
     height: 100%;
     top: 0;

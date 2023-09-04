@@ -16,7 +16,7 @@
                     <p style="font-size:15px;color:#3e52e0;">welcome</p>
                     <p>欢迎来到Rarrot的动画库</p>
                     <div class="blocks-url">
-                        <a href="https://www.rorrot.cc/cartoonsMD/O.o%E6%AC%A2%E8%BF%8E.html">Visit</a>
+                        <a href="/cartoonsMD/O.o%E6%AC%A2%E8%BF%8E.html">Visit</a>
                         <!-- github图标 -->
                         <svg class="github" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <title>GitHub</title>
