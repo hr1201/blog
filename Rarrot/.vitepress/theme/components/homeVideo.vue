@@ -1,17 +1,19 @@
 <template>
-    <section class="videos">
-        <video class="video-slide" src="./images/mountain3.mp4" autoplay muted loop></video>
+    <section v-if="!curDeviceIsMobile" class="videos">
+        <video class="video-slide" src="./images/pexels-ambientnature-atmosphere-5948574 (1080p).mp4" autoplay muted
+            loop></video>
         <div class="content">
             <h1>个人博客网站<br><span>Rarrot</span></h1>
             <p>去成为你想成为的人，什么时候都可以开始；去做你想做的事，任何方向都值得努力。追梦路上，没有不受重力的飞翔。吝惜汗水和能量，哪一条路都是弯路；朝着目标努力前进，整个世界都会为你让路。以后那么长，不是想出来的，是过出来的。
             </p>
             <a href="/articles/JavaScript/0认识JavaScript.html">我的博客</a>
         </div>
-        <div class="social">
+
+        <!-- <div class="social">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
-        </div>
+        </div> -->
         <!-- <div class="slider-navigation">
             <div class="nav-btn"></div>
             <div class="nav-btn"></div>
@@ -20,15 +22,42 @@
             <div class="nav-btn"></div>
         </div> -->
     </section>
+    <!-- 如果是移动端，上述样式会不兼容，故降级为图片显示 -->
+    <div v-else class="image-container">
+        <homedefaultTheme />
+    </div>
 </template>
 
 <script setup lang='ts'>
-import { ref, reactive } from 'vue'
+import { ref, onBeforeMount } from "vue";
+import { inBrowser } from 'vitepress';
+import homedefaultTheme from './homedefaultTheme.vue';
+
+// 判断当前页面是否为移动端
+function isMobile() {
+    if (inBrowser) {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+    return false;
+}
+
+const curDeviceIsMobile = ref(false)
+
+onBeforeMount(() => {
+    curDeviceIsMobile.value = isMobile();
+});
+
+
 </script>
 <style lang='less' scoped>
 // body{
 //     background: fixed;
 // }
+/* 防止页面闪烁 */
+[v-cloak] {
+    display: none !important;
+}
+
 section {
     margin: 0;
     padding: 0;
@@ -42,7 +71,7 @@ section {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: #80834a;
+    background-color: var(--vp-c-bg);
 
     .content {
         z-index: 17;
@@ -139,7 +168,7 @@ section {
 
         // 点击变颜色
         .nav-btn:hover {
-            background: #747140;
+            background: var(--vp-c-bg);
         }
     }
 }
@@ -148,7 +177,7 @@ section {
     z-index: 15;
     content: '';
     position: absolute;
-    background: rgba(37, 21, 4, 0.3);
+    background: rgba(8, 25, 48, 0.144);
     width: 100%;
     height: 100%;
     top: 0;

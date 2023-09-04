@@ -75,7 +75,8 @@
   --vp-inverted-image-filter: var(--vp-inverted-image-lighter-filter);
   --vp-c-text-code: #c7254e;
   --vp-c-mute: #f9f2f4;
-  /* --vp-c-text-1: rgb(256,256,256.0.11); */
+  /* --vp-c-text-1: rgb(256,256,256.0.91); */
+  --vp-c-text-light-1:rgb(0,0,0)
 }
 
 .dark {
@@ -85,6 +86,8 @@
   --vp-inverted-image-filter: var(--vp-inverted-image-dark-filter);
   --vp-c-text-code: #c7254e;
   --vp-c-mute: #313136;
+  --vp-c-text-dark-1:rgb(256,256,256)
+
 }
 
 /**
@@ -105,6 +108,21 @@
   font-family: "Lucida Handwriting";
 } */
 
+/** 总体类 */
+/* ::selection {
+  background: var(--custom-selection);
+  color: var(--vp-c-bg);
+}
+
+::-moz-selection {
+  background: var(--custom-selection);
+  color: var(--vp-c-bg);
+}
+
+::-webkit-selection {
+  background: var(--custom-selection);
+  color: var(--vp-c-bg);
+} */
 
 /* 首页不需要padding，其他页面需要 */
 .VPContent {
