@@ -1,6 +1,6 @@
 <template>
     <section v-if="!curDeviceIsMobile" class="videos">
-        <video class="video-slide" src="./images/pexels-ambientnature-atmosphere-5948574 (1080p).mp4" autoplay muted
+        <video class="video-slide" src="./images/rain.mp4" autoplay muted
             loop></video>
         <div class="content">
             <h1>个人博客网站<br><span>Rarrot</span></h1>
