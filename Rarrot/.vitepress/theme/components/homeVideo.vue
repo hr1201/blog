@@ -151,7 +151,7 @@ section {
     background: rgba(37, 21, 4, 0.3);
     width: 100%;
     height: 100%;
-    top: -64px;
+    top: 0;
     left: 0;
 
 }
