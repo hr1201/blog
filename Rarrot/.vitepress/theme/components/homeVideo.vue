@@ -148,7 +148,7 @@ section {
     z-index: 15;
     content: '';
     position: absolute;
-    background: rgba(37, 21, 4, 0.3);
+    background: rgba(8, 54, 8, 0.3);
     width: 100%;
     height: 100%;
     top: 0;
