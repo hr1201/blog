@@ -2,20 +2,20 @@
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
-hero:
-  name: "Rarrot"
-  text: "个人博客网站"
-  tagline: 
-  image:
-    src: ./white-cloud.png
-    alt: Rarrot
-  actions:
-    - theme: brand
-      text: 我的博客
-      link: /articles/JavaScript/0认识JavaScript
-    - theme: alt
-      text: 示例
-      link: /articles/hello
+# hero:
+#   name: "Rarrot"
+#   text: "个人博客网站"
+#   tagline: 
+#   image:
+#     src: ./white-cloud.png
+#     alt: Rarrot
+#   actions:
+#     - theme: brand
+#       text: 我的博客
+#       link: /articles/JavaScript/0认识JavaScript
+#     - theme: alt
+#       text: 示例
+#       link: /articles/hello
 
 # features:
 #   - icon: ⚡️
@@ -27,14 +27,17 @@ hero:
 #   - icon: 🛠️
 #     title: 这是一个修理图标
 #     details: fuck*
----
 
+---
 <script setup>
-import home from './.vitepress/theme/components/home.vue'
+import card from './.vitepress/theme/components/homeCard.vue'
+import videos from './.vitepress/theme/components/homeVideo.vue'
 
 </script>
 
-<home />
+<videos />
+
+<card />
 
 
 

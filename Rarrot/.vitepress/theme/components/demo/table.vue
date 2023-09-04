@@ -6,11 +6,11 @@
         <table class="gridtable" width="100%">
             <thead>
                 <tr>
-                    <th width="21%">动物名称</th>
-                    <th width="21%">动物单价</th>
+                    <th width="22%">动物名称</th>
+                    <th width="22%">动物单价</th>
                     <th width="21%">动物数量</th>
-                    <th width="17%">动物总价</th>
-                    <th width="20%">操作</th>
+                    <th width="16%">动物总价</th>
+                    <th width="19%">操作</th>
                 </tr>
             </thead>
             <tbody align="center">
@@ -61,17 +61,17 @@ interface Data {
 
 const items: Data[] = reactive([
     {
-        name: '鸡鸡',
+        name: '鸡鸡🐓',
         price: 66,
         num: 1,
     },
     {
-        name: '鸭鸭',
+        name: '鸭鸭🦆',
         price: 36,
         num: 1,
     },
     {
-        name: '鹅鹅',
+        name: '鹅鹅🦢',
         price: 80,
         num: 1,
     },

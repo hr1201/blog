@@ -56,6 +56,13 @@ export function trigger(target:object,key:any){
 
 ```
 
+<br/>
+
+**图片来自**[小满zs](https://xiaoman.blog.csdn.net/article/details/122792620)
+
+![](https://cdn.staticaly.com/gh/hr1201/img@main/imgs/202309022117316.png)
+
+
 ## reactive.ts
 
 ```typescript
@@ -101,6 +108,7 @@ export const reactive = ((obj: object) => {
 })
 
 ```
+
 
 ## 测试代码
 

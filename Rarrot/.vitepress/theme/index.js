@@ -3,7 +3,6 @@ import { h } from 'vue'
 import Theme from 'vitepress/theme'
 import './style.css'
 import containers from './components/container.vue'
-import homeBackground from './components/homeBackground.vue'
 import test from './components/test.vue'
 import findCount from './components/findCount.vue'
 import block from './components/cartoons/animationBlock.vue'
@@ -20,7 +19,6 @@ export default {
   enhanceApp({ app, router, siteData }) {
     app
       .component('containers', containers)
-      .component('homeBackground', homeBackground)
       .component('test', test)
       .component('findCount',findCount)
       .component('block',block)
