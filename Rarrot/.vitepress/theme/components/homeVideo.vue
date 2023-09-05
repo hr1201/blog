@@ -77,7 +77,9 @@ section {
     justify-content: center;
     flex-direction: column;
     background-color: var(--vp-c-bg);
-
+    .video-slide{
+        mix-blend-mode: multiply;
+    }
     .content {
         z-index: 17;
         color: #fff;

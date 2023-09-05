@@ -1,6 +1,6 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
-layout: home
+layout: false
 
 # title: VitePress
 # titleTemplate: Vite & Vue Powered Static Site Generator
