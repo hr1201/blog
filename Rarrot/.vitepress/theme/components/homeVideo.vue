@@ -1,7 +1,17 @@
 <template>
-    <section v-if="!curDeviceIsMobile" class="videos">
-        <video class="video-slide" src="./images/rain.mp4" autoplay muted
-            loop></video>
+    <section class="videos">
+        <video class="video-slide" autoplay muted loop>
+            <source v-if="!curDeviceIsMobile" src="./images/rain2.mp4" type="video/mp4" />
+            <source v-else src="./images/rain.mp4" type="video/mp4" />
+
+        </video>
+        <!-- 如果是移动端，上述样式会不兼容，故降级为图片显示 -->
+        <!-- -->
+        <!-- 
+            <div v-else class="image-container">
+                <homedefaultTheme />
+            </div> 
+        -->
         <div class="content">
             <h1>个人博客网站<br><span>Rarrot</span></h1>
             <p>去成为你想成为的人，什么时候都可以开始；去做你想做的事，任何方向都值得努力。追梦路上，没有不受重力的飞翔。吝惜汗水和能量，哪一条路都是弯路；朝着目标努力前进，整个世界都会为你让路。以后那么长，不是想出来的，是过出来的。
@@ -22,16 +32,11 @@
             <div class="nav-btn"></div>
         </div> -->
     </section>
-    <!-- 如果是移动端，上述样式会不兼容，故降级为图片显示 -->
-    <div v-else class="image-container">
-        <homedefaultTheme />
-    </div>
 </template>
 
 <script setup lang='ts'>
 import { ref, onBeforeMount } from "vue";
 import { inBrowser } from 'vitepress';
-import homedefaultTheme from './homedefaultTheme.vue';
 
 // 判断当前页面是否为移动端
 function isMobile() {
@@ -177,7 +182,7 @@ section {
     z-index: 15;
     content: '';
     position: absolute;
-    background: rgba(8, 25, 48, 0.144);
+    background: rgba(115, 204, 207, 0.13);
     width: 100%;
     height: 100%;
     top: 0;
