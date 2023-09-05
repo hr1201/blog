@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "Rarrot:dev": "vitepress dev Rarrot",
@@ -19,7 +20,7 @@
     "less": "^4.2.0",
     "search-insights": ">= 1 < 3",
     "sitemap": "^7.1.1",
-    "vitepress": "1.0.0-beta.2",
+    "vitepress": "1.0.0-rc.10",
     "vue": ">=3.2.0"
   },
   "dependencies": {
