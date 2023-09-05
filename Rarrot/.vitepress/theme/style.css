@@ -76,7 +76,7 @@
   --vp-c-text-code: #c7254e;
   --vp-c-mute: #f9f2f4;
   /* --vp-c-text-1: rgb(256,256,256.0.91); */
-  --vp-c-text-light-1:rgb(0,0,0)
+  --vp-c-text-light-1:rgba(0,0,0,0.91)
 }
 
 .dark {
@@ -86,7 +86,7 @@
   --vp-inverted-image-filter: var(--vp-inverted-image-dark-filter);
   --vp-c-text-code: #c7254e;
   --vp-c-mute: #313136;
-  --vp-c-text-dark-1:rgb(256,256,256)
+  --vp-c-text-dark-1:rgba(256,256,256)
 
 }
 

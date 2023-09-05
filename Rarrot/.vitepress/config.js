@@ -6,8 +6,9 @@ import { SitemapStream } from 'sitemap'
 import { createWriteStream } from 'node:fs'
 import { resolve } from 'node:path'
 
-const path = require("path");
+import path from 'node:path';
 const links = [];
+
 export default defineConfig({
   title: "Rarrot",
   description: "Rarrot的个人博客网站",

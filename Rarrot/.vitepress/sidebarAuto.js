@@ -1,5 +1,5 @@
-const path = require("path");
-const dirTree = require("directory-tree");
+import { resolve } from 'path';
+import dirTree from 'directory-tree';
 
 function toSidebarOption(tree = []) {
   if (!Array.isArray(tree)) return [];
@@ -76,4 +76,4 @@ function sidebarAuto(srcPath, title) {
 //   // console.log(value)
 // }))
 
-module.exports = sidebarAuto;
+export default sidebarAuto;
