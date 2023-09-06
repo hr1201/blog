@@ -1,8 +1,8 @@
 <template>
     <section class="videos">
         <video class="video-slide" autoplay muted loop>
-            <source v-if="!curDeviceIsMobile" src="https://hr-1313954536.cos.ap-guangzhou.myqcloud.com/pexels-ambientnature-atmosphere-5948574%20%281080p%29.mp4" type="video/mp4" />
-            <source v-else src="./images/rain.mp4" type="video/mp4" />
+            <source v-if="!curDeviceIsMobile" src="https://hr-1313954536.cos.ap-guangzhou.myqcloud.com/pexels-ambientnature-atmosphere-5948574%20%281440p%29.mp4" type="video/mp4" />
+            <source v-else src="https://hr-1313954536.cos.ap-guangzhou.myqcloud.com/pexels-ambientnature-atmosphere-5948574%20%281080p%29.mp4" type="video/mp4" />
 
         </video>
         <!-- 如果是移动端，上述样式会不兼容，故降级为图片显示 -->
