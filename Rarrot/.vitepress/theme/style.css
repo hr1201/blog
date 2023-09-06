@@ -107,11 +107,11 @@
  * 特殊配置
  * -------------------------------------------------------------------------- */
 
-/* .VPNavBarTitle,
+.VPNavBarTitle,
 .VPHero .name span,
 .VPHero .text {
-  font-family: "Lucida Handwriting";
-} */
+  font-family: 'Nabla', cursive;
+}
 
 /** 总体类 */
 /* ::selection {

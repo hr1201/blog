@@ -1,8 +1,12 @@
 <template>
     <section class="videos">
         <video class="video-slide" autoplay muted loop>
-            <source v-if="!curDeviceIsMobile" src="https://hr-1313954536.cos.ap-guangzhou.myqcloud.com/pexels-ambientnature-atmosphere-5948574%20%281440p%29.mp4" type="video/mp4" />
-            <source v-else src="https://hr-1313954536.cos.ap-guangzhou.myqcloud.com/pexels-ambientnature-atmosphere-5948574%20%281080p%29.mp4" type="video/mp4" />
+            <source v-if="!curDeviceIsMobile"
+                src="https://hr-1313954536.cos.ap-guangzhou.myqcloud.com/pexels-ambientnature-atmosphere-5948574%20%281440p%29.mp4"
+                type="video/mp4" />
+            <source v-else
+                src="https://hr-1313954536.cos.ap-guangzhou.myqcloud.com/pexels-ambientnature-atmosphere-5948574%20%281080p%29.mp4"
+                type="video/mp4" />
 
         </video>
         <!-- 如果是移动端，上述样式会不兼容，故降级为图片显示 -->
@@ -55,6 +59,8 @@ onBeforeMount(() => {
 
 </script>
 <style lang='less' scoped>
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&family=Nabla&family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@500&display=swap');
+
 // body{
 //     background: fixed;
 // }
@@ -77,15 +83,17 @@ section {
     justify-content: center;
     flex-direction: column;
     background-color: var(--vp-c-bg);
-    .video-slide{
+
+    .video-slide {
         mix-blend-mode: multiply;
     }
+
     .content {
         z-index: 17;
         color: #fff;
         width: 75%;
         margin-top: 50px;
-
+        font-family: 'Ma Shan Zheng', cursive;
         h1 {
             font-size: 4em;
             font-weight: 900;
@@ -95,17 +103,19 @@ section {
             span {
                 font-size: 1.2em;
                 font-weight: 600;
+                font-family: 'Marck Script', cursive;
             }
         }
 
         p {
+            font-family: 'Noto Serif SC', serif;
             margin-bottom: 65px;
         }
 
         a {
-            background: #fff;
+            background: rgba(255, 255, 255, 0.9);
             padding: 15px 35px;
-            color: #2c2e10;
+            color: #0dbc79;
             font-size: 1.1em;
             font-weight: 500;
             text-decoration: none;
@@ -218,5 +228,4 @@ section {
     .videos .content a {
         padding: 12px 30px;
     }
-}
-</style>
+}</style>
