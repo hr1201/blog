@@ -105,7 +105,7 @@ new Vue({
 }) 
 ```
 
-![](https://cdn.staticaly.com/gh/hr1201/img@main/imgs/202307251627477.png)
+![](https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202307251627477.png)
 
 
 

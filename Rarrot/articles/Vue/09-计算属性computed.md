@@ -1,10 +1,10 @@
 # 计算属性computed
 
-[计算属性](https://so.csdn.net/so/search?q=%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7&spm=1001.2101.3001.7020)就是当依赖的属性的值**发生变化的时候，才会触发他的更改**，如果依赖的值，不发生变化的时候，使用的是缓存中的属性值。
+[计算属性](https://so.csdn.net/so/search?q=%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7&spm=1001.2101.3001.7020)是基于其他数据源（如 data、props 等）的值进行计算得到的，是缓存的，只有当依赖的数据源发生变化时，计算属性才会重新计算。
 
+计算属性适合用来处理根据其他数据源的值变化而变化的数据，例如：格式化日期、过滤列表等。
 
-
-## 调用方式
+## 基本用法
 
 ### 选项式写法
 
@@ -304,3 +304,107 @@ export class ComputedRefImpl<T> {
   }
 }
 ```
+
+<br/>
+
+### 脏值检测解释
+
+<br/>
+
+① 这里传入到effect的schedule函数将_dirty转为true，这样可以进入if条件句进行依赖更新，同样也是为了防止第一次依赖更新之后的_dirty一直为false，未完请往下看：
+
+以下为简易的computed函数实现：
+```typescript{3-5}
+export const computed = (getter: Function) => {
+    let _value = effect(getter,{
+        scheduler(){
+            _dirty=true
+        }
+    })
+    let catchCompu:Function//用于暂存函数，防止_dirty不是true时也去调用依赖
+    let _dirty=true
+
+    class ComputedRefImpl {
+        get value() {
+            if(_dirty){
+                // 进行依赖更新
+                catchCompu=_value()
+                _dirty=false
+            }
+            return catchCompu
+
+        }
+    }
+    return new ComputedRefImpl()
+}
+```
+
+<br/>
+
+② 在effect中多接收一个参数options，在effect中对收集的函数新增的一个属性options进行初始化，并返回依赖更新函数，未完请往下看：
+
+
+以下为简易的effect函数实现：
+```typescript{22}
+interface Options {
+    scheduler?: Function
+}
+
+type EffectFunction = {
+    (): any;
+    options?: Options;
+};
+
+// 收集函数
+let findeffect
+
+// fn为匿名的函数，这里将fn收集起来，当依赖更新时执行effect副作用函数
+export function effect(fn: Function, options: Options) {
+    // 闭包
+    let _effect:EffectFunction = function () {
+        findeffect = _effect;
+        let res = fn();
+        return res
+    }
+    // 给_effect增添一个属性
+    _effect.options = options
+    _effect()
+    return _effect
+}
+```
+
+<br/>
+
+③ 当依赖更新时具有了options，所以会调用scheduler函数进行依赖更新，这也就实现了computed在不改变数据时不重复调用，而是使用缓存，当改变时也可以及时的进行依赖调用。
+
+
+以下为简易的trigger函数实现：
+```typescript{9-15}
+export function trigger(target: object, key: any) {
+    // 从targetMap用target作为key获取到含有相应对象的newMap
+    const newMap = targetMap.get(target)
+    // 从newMap中获取到含有相应属性的Set，Set中含有函数，并且是可迭代的
+    const effects = newMap.get(key)
+
+    // 调用effects中收集的函数
+    effects.forEach(effect => {
+        if (effect?.options?.scheduler) {
+            // 如果存在options的话就调用options下的scheduler()函数，对_dirty进行更改
+            // 否则就调用effect()
+            effect?.options?.scheduler?.()
+        } else {
+            effect()
+        }
+    })
+}
+```
+
+<br/>
+
+::: tip 提示
+你可以代入一个computed函数的使用去按照流程走一遍，可能会清晰一些。
+::: 
+
+::: warning 注意
+只有当值改变时才会去effect收集依赖，然后trigger更新依赖；而没有改变时，调用get value获取值(catchCompu)
+:::

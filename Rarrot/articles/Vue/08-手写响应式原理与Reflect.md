@@ -60,7 +60,7 @@ export function trigger(target:object,key:any){
 
 **图片来自**[小满zs](https://xiaoman.blog.csdn.net/article/details/122792620)
 
-![](https://cdn.staticaly.com/gh/hr1201/img@main/imgs/202309022117316.png)
+![](https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202309022117316.png)
 
 
 ## reactive.ts

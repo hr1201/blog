@@ -162,7 +162,7 @@ const http = new Http() as any
 
 以下为接口获取的数据：
 
-![](https://cdn.staticaly.com/gh/hr1201/img@main/imgs/202307281152997.png)
+![](https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202307281152997.png)
 
 
 

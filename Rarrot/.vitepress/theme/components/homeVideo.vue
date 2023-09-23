@@ -5,17 +5,10 @@
                 src="https://hr-1313954536.cos.ap-guangzhou.myqcloud.com/pexels-ambientnature-atmosphere-5948574%20%281440p%29.mp4"
                 type="video/mp4" />
             <source v-else
-                src="https://hr-1313954536.cos.ap-guangzhou.myqcloud.com/pexels-ambientnature-atmosphere-5948574%20%281080p%29.mp4"
+                src="./images/vaagenes.mp4"
                 type="video/mp4" />
 
         </video>
-        <!-- 如果是移动端，上述样式会不兼容，故降级为图片显示 -->
-        <!-- -->
-        <!-- 
-            <div v-else class="image-container">
-                <homedefaultTheme />
-            </div> 
-        -->
         <div class="content">
             <h1>个人博客网站<br><span>Rarrot</span></h1>
             <p>去成为你想成为的人，什么时候都可以开始；去做你想做的事，任何方向都值得努力。追梦路上，没有不受重力的飞翔。吝惜汗水和能量，哪一条路都是弯路；朝着目标努力前进，整个世界都会为你让路。以后那么长，不是想出来的，是过出来的。

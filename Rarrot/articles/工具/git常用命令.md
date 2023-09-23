@@ -1,7 +1,7 @@
 # git常用命令
 
 
-![](https://cdn.staticaly.com/gh/hr1201/img@main/imgs/202308282113993.png)
+![](https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202308282113993.png)
 
 
 
@@ -100,19 +100,19 @@ git config --global --unset https.proxy
 ### failed to push refs
 关于git出现此问题的解决办法：
 
-![image-20230115122353862](https://cdn.staticaly.com/gh/hr1201/img@main/imgs/image-20230115122353862.png)
+![image-20230115122353862](https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/image-20230115122353862.png)
 
 
 
 使用`git pull --rebase origin master`远程文件拉到本地进行比较：
 
-![image-20230115122626836](https://cdn.staticaly.com/gh/hr1201/img@main/imgs/image-20230115122626836.png)
+![image-20230115122626836](https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/image-20230115122626836.png)
 
 
 
 在本地解决冲突后，使用`git rebase --skip`进行跳过此阶段，之后在进行push，即可成功上传
 
-![image-20230115122858982](https://cdn.staticaly.com/gh/hr1201/img@main/imgs/image-20230115122858982.png)
+![image-20230115122858982](https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/image-20230115122858982.png)
 
 <br/>
 

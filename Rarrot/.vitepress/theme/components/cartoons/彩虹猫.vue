@@ -39,7 +39,7 @@ p {
     -webkit-background-clip: text;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url(https://cdn.staticaly.com/gh/hr1201/img@main/imgs/彩虹猫.gif);
+    background-image: url(https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/彩虹猫.gif);
     /* 描述了元素的内容应该与元素的直系父元素的内容和元素的背景如何混合。 */
     mix-blend-mode: hard-light;
     word-break: break-all;

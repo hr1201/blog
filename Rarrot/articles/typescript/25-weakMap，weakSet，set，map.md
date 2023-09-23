@@ -82,13 +82,13 @@ console.log(weakmap.get(obj))//underfined
 
 以下这张图展示的是obj还没有被垃圾回收时的weakmap，可以看到，即使weakmap中有值，也取不到，如下图：
 
-![](https://cdn.staticaly.com/gh/hr1201/img@main/imgs/202308021405057.png)
+![](https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202308021405057.png)
 
 
 
 把对obj的引用都给去掉后，并且进行多次刷新，就可以看到Google引擎的v8引擎是把这一个obj给回收了，weakmap中的数据也不存在了，如下图：
 
-![](https://cdn.staticaly.com/gh/hr1201/img@main/imgs/202308021409742.png)
+![](https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202308021409742.png)
 
 
 

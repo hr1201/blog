@@ -4,7 +4,7 @@
 
 点击vscode左下角的小齿轮，点击“用户代码片段”:
 
-![](https://cdn.staticaly.com/gh/hr1201/img@main/imgs/202307221357684.png)
+![](https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202307221357684.png)
 
 
 
@@ -12,7 +12,7 @@
 
 在搜索框输入vue，点击vue.json文件：
 
-![](https://cdn.staticaly.com/gh/hr1201/img@main/imgs/202307221400247.png)
+![](https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202307221400247.png)
 
 
 

@@ -5,7 +5,7 @@
 ### 原因
 之所以需要虚拟dom，是因为一个元素**含有许多的属性（如下图）**且每次更新需要**重新计算布局**(计算每个元素的位置和大小)和**绘制**(将元素绘制在屏幕上)，直接操作DOM的话性能会偏低，这时候我们就可以用**js的计算性能**(也就是通过diff算法)来换取操作DOM所消耗的性能，操作js是非常快的。
 
-![img-230715122](https://cdn.staticaly.com/gh/hr1201/img@main/imgs/202307171905274.png)
+![img-230715122](https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202307171905274.png)
 
 
 ### 工作流程
@@ -99,7 +99,7 @@ const vnode = createVNode('div', { class: 'container' }, 'Hello, Vue 3!');
   }
 ```
 
-![img](https://cdn.staticaly.com/gh/hr1201/img@main/imgs/202307181638923.png)
+![img](https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202307181638923.png)
 
 
 

@@ -130,10 +130,42 @@
 } */
 
 /* 首页不需要padding，其他页面需要 */
-.VPContent {
+/* .VPContent {
   padding-top: 0 !important;
 }
 
 .VPContent .has-sidebar {
   padding-top: var(--vp-nav-height) !important;
+} */
+
+.VPNavBar.fill:not(.has-sidebar) {
+  border: none !important;
+  background-color: transparent !important;
 }
+.VPNavBar {
+  .curtain {
+    display: none;
+  }
+  .content-body {
+    pointer-events: none;
+    border: none;
+    background-color: transparent !important;
+  }
+  .VPNavBarSearch {
+    pointer-events: none;
+  }
+}
+.VPNavBarTitle .title {
+  transition: all .25s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  &:hover {
+    transform: scale(1.1);
+    color: #bd34fe;
+    .VPImage {
+      transform: scale(1.25);
+    }
+  }
+  .VPImage {
+    transition: transform .5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  }
+}
+

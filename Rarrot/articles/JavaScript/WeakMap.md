@@ -151,12 +151,12 @@ console.log(wm.size);//underfined
 
 用node的`--expose-gc`可进行手动执行垃圾回收机制，可明显看出，将b置空后，所使用的`headUsed`(用到的"堆"的部分)也与原来的类似，说明在weakmap中的引用也被清理，并没有内存溢出。
 
-  ![image-20230418220526777](https://cdn.staticaly.com/gh/hr1201/img@main/imgs/image-20230418220526777.png)
+  ![image-20230418220526777](https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/image-20230418220526777.png)
 
 
 由下图可知道，Map对键的引用为强引用，在将a置空后，只清除了一半的内存空间，仍然保留了a的引用，造成了内存泄露。也可以说明Map中保留的为原始对象的引用。
 
-  ![](https://cdn.staticaly.com/gh/hr1201/img@main/imgs/202308021419714.png)
+  ![](https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202308021419714.png)
 
 
 

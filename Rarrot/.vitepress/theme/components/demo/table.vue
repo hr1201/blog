@@ -14,7 +14,7 @@
                 </tr>
             </thead>
             <tbody align="center">
-                <tr v-for="(item, index) in searchDatas" v-bind:key="index">
+                <tr v-for="(item, index) in searchDatas" :key="index">
                     <td>{{ item.name }}</td>
                     <td>{{ item.price }}</td>
                     <td>

@@ -33,14 +33,10 @@ layout: home
 
 ---
 <script setup>
-import card from './.vitepress/theme/components/homeCard.vue'
 import videos from './.vitepress/theme/components/homeVideo.vue'
 
 </script>
 
 <videos />
-
-<card />
-
 
 

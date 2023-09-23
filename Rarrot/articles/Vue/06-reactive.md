@@ -81,7 +81,7 @@ const submit=()=>{
 <style scoped></style>
 ```
 
-![](https://cdn.staticaly.com/gh/hr1201/img@main/imgs/202308041658639.png)
+![](https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202308041658639.png)
 
 
 
@@ -192,14 +192,14 @@ const add = () => {
 
 
 
-![](https://cdn.staticaly.com/gh/hr1201/img@main/imgs/202308041803926.png)
+![](https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202308041803926.png)
 
 
 
 
 <br>但是当我们对obj进行赋值时，read的值也会跟着一起变，原因是obj和read指向同一个引用，如下图：
 
-![](https://cdn.staticaly.com/gh/hr1201/img@main/imgs/202308041812208.png)
+![](https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202308041812208.png)
 
 
 
@@ -265,7 +265,7 @@ state.a = 7
 
 只要**去更改了第一层级的a**，其余的也会进行依赖更新，说明只能对浅层的数据进行视图的更新，如果是深层的数据，例如first.b和first.second.c是只改变值，不更新视图：
 
-![](https://cdn.staticaly.com/gh/hr1201/img@main/imgs/202308042028239.png)
+![](https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202308042028239.png)
 
 
 

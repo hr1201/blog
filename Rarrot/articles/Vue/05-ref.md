@@ -59,7 +59,7 @@ const change = () => {
 <style scoped></style> 
 ```
 
-![](https://cdn.staticaly.com/gh/hr1201/img@main/imgs/202308031812741.png)
+![](https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202308031812741.png)
 
 
 
@@ -116,7 +116,7 @@ const change = () => {
 
 下图将`triggerRef(rarrot2)`和`rarrot2.value={ name:'nihao2' }`都注释了：
 
-![](https://cdn.staticaly.com/gh/hr1201/img@main/imgs/202308032027751.png)
+![](https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202308032027751.png)
 
 
 
@@ -177,7 +177,7 @@ const change = () => {
 <style scoped></style> 
 ```
 
-![](https://cdn.staticaly.com/gh/hr1201/img@main/imgs/202308032041975.png)
+![](https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202308032041975.png)
 
 
 
@@ -193,17 +193,17 @@ const change = () => {
 
 我们在使用ref后，想要打印返回的响应式对象，但是给了一堆属性，如下图：
 
-![](https://cdn.staticaly.com/gh/hr1201/img@main/imgs/202308032102901.png)
+![](https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202308032102901.png)
 
 所以可以进行以下设置：
 
-![](https://cdn.staticaly.com/gh/hr1201/img@main/imgs/202308032057850.png)
+![](https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202308032057850.png)
 
 
 
 设置之后打印的效果就变得很简洁，如下图所示：
 
-![](https://cdn.staticaly.com/gh/hr1201/img@main/imgs/202308032103697.png)
+![](https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202308032103697.png)
 
 
 
@@ -237,7 +237,7 @@ const change = () => {
 <style scoped></style> 
 ```
 
-![](https://cdn.staticaly.com/gh/hr1201/img@main/imgs/202308032111261.png)
+![](https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202308032111261.png)
 
 
 

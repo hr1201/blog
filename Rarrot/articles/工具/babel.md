@@ -106,7 +106,7 @@ $ babel src -d lib -s
 
 执行`babel utils.js --out-file utils2.es5.js`效果，由于Object.entries(events)不在es6和es5范围内
 
-![](https://cdn.staticaly.com/gh/hr1201/img@main/imgs/202308282119970.png)
+![](https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202308282119970.png)
 
 
 

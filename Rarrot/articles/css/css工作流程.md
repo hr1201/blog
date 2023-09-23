@@ -13,4 +13,4 @@
 6. 页面的视觉显示显示在屏幕上（这个阶段称为绘画）。
 
 
-![](https://cdn.staticaly.com/gh/hr1201/img@main/imgs/202308282106723.png)
+![](https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202308282106723.png)

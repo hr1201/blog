@@ -49,7 +49,7 @@ export default defineConfig({
     //   light: '/logo-light.svg',
     //   dark: '/logo-dark.svg',
     // },
-    logo: "https://cdn.staticaly.com/gh/hr1201/img@main/imgs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230508210154.jpg",
+    logo: "https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230508210154.jpg",
 
     // https://vitepress.dev/reference/default-theme-config
     footer: {
@@ -88,6 +88,8 @@ export default defineConfig({
       // },
     ],
     nav: [
+      { text: '导航页', link: '/articles/导航/navigate' },
+      { text: '博客', link: '/articles/博客/关于博客建立过程' },
       {
         text: '前端',
         items: [
@@ -100,9 +102,12 @@ export default defineConfig({
       },
       { text: '工具', link: '/articles/工具/nvm' },
       { text: '动画', link: '/cartoonsMD/O.o欢迎' },
-
     ],
     sidebar: {
+      "/articles/博客": sidebarAuto(
+        path.resolve(__dirname, "../articles/博客"),
+      ),
+
       "/articles/HTML": sidebarAuto(
         path.resolve(__dirname, "../articles/HTML"),
       ),
@@ -121,13 +126,19 @@ export default defineConfig({
 
       "/articles/typescript": sidebarAuto(
         path.resolve(__dirname, "../articles/typescript"),
-      ),
+      ).concat(sidebarAuto(
+        path.resolve(__dirname, "../articles/typescript/问题"),
+        "问题"
+      )),
       
       "/articles/Vue": sidebarAuto(
         path.resolve(__dirname, "../articles/Vue"),
       ).concat(sidebarAuto(
         path.resolve(__dirname, "../articles/Vue/问题"),
         "问题"
+      )).concat(sidebarAuto(
+        path.resolve(__dirname, "../articles/Vue/插件"),
+        "插件"
       )),
       
       "/cartoonsMD": sidebarAuto(

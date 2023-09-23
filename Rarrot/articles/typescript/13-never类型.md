@@ -48,7 +48,7 @@ function kun(value: A) {
 }
 ```
 
-![](https://cdn.staticaly.com/gh/hr1201/img@main/imgs/202307261200710.png)
+![](https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202307261200710.png)
 
 
 
