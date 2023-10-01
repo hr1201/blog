@@ -47,32 +47,32 @@ interface cartoonIn {
 
 const cartoons: cartoonIn[] = [
     {
-        gif: 'https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/welcome.gif',
-        img: 'https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202309031455622.png',
+        gif: 'https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202310012037788.png',
+        img: 'https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202310012037788.png',
         introduce: 'welcome',
-        ahref: '/cartoonsMD/O.o%E6%AC%A2%E8%BF%8E.html',
-        svghref: 'https://github.com/hr1201/blog/blob/main/Rarrot/.vitepress/theme/components/cartoons/%E6%AC%A2%E8%BF%8E.vue'
+        ahref: '/cartoonsMD/O.o欢迎.html',
+        svghref: 'https://github.com/hr1201/blog/blob/main/Rarrot/.vitepress/theme/components/cartoons/欢迎.vue'
     },
     {
-        gif: './images/cat.gif',
-        img: 'https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202309031455622.png',
+        gif: 'https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/cat.gif',
+        img: 'https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202310011758438.png',
         introduce: 'welcome',
-        ahref: '/cartoonsMD/O.o%E6%AC%A2%E8%BF%8E.html',
-        svghref: 'https://github.com/hr1201/blog/blob/main/Rarrot/.vitepress/theme/components/cartoons/%E6%AC%A2%E8%BF%8E.vue'
+        ahref: '/cartoonsMD/彩虹猫.html',
+        svghref: 'https://github.com/hr1201/blog/blob/main/Rarrot/.vitepress/theme/components/cartoons/彩虹猫.vue'
     },
     {
-        gif: 'https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/welcome.gif',
-        img: 'https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202309031455622.png',
+        gif: 'https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202310011800704.png',
+        img: 'https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202310011800704.png',
         introduce: 'welcome',
-        ahref: '/cartoonsMD/O.o%E6%AC%A2%E8%BF%8E.html',
-        svghref: 'https://github.com/hr1201/blog/blob/main/Rarrot/.vitepress/theme/components/cartoons/%E6%AC%A2%E8%BF%8E.vue'
+        ahref: '/cartoonsMD/文字雨.html',
+        svghref: 'https://github.com/hr1201/blog/blob/main/Rarrot/.vitepress/theme/components/cartoons/文字雨.vue'
     },
     {
-        gif: 'https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/welcome.gif',
-        img: 'https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202309031455622.png',
+        gif: 'https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/GIF%202023-10-1%2020-20-41.gif',
+        img: 'https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202310012023351.png',
         introduce: 'welcome',
-        ahref: '/cartoonsMD/O.o%E6%AC%A2%E8%BF%8E.html',
-        svghref: 'https://github.com/hr1201/blog/blob/main/Rarrot/.vitepress/theme/components/cartoons/%E6%AC%A2%E8%BF%8E.vue'
+        ahref: '/cartoonsMD/篮球.html',
+        svghref: 'https://github.com/hr1201/blog/blob/main/Rarrot/.vitepress/theme/components/cartoons/ikun.vue'
     }
 ]
 

@@ -37,7 +37,6 @@ import card from '../../.vitepress/theme/components/homeCard.vue'
 
 </script>
 
-
 <card />
 
 

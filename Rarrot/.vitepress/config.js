@@ -152,4 +152,7 @@ export default defineConfig({
     }
 
   },
+  vite:{
+    
+  }
 })

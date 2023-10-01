@@ -159,9 +159,8 @@
   transition: all .25s cubic-bezier(0.18, 0.89, 0.32, 1.28);
   &:hover {
     transform: scale(1.1);
-    color: #bd34fe;
     .VPImage {
-      transform: scale(1.25);
+      transform: scale(1.1);
     }
   }
   .VPImage {
@@ -169,10 +168,6 @@
   }
 }
 
-/* 不显示prev/next // TODO 应该有更优雅的方式 */
-.prev-next {
-	display: none !important;
-}
 /* 首页不需要padding，其他页面需要 */
 .VPContent {
 	padding-top: 0 !important;
@@ -181,3 +176,4 @@
 .VPContent .has-sidebar {
 	padding-top: var(--vp-nav-height) !important;
 }
+

@@ -1,5 +1,7 @@
 <template>
     <div>
+        <img src="./images/basketball.png" alt="">
+        你好
     </div>
 </template>
 

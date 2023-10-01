@@ -1,7 +1,7 @@
 <template>
     <block color="rgba(256,256,256,0.1)">
         <div class="ikun">
-            <img @click="bounceAnimation" ref="basketball" class="basketball" src="../images/basketball.png" alt="">
+            <img @click="bounceAnimation" ref="basketball" class="basketball" src="../images/basketball.png" alt="basketball">
         </div>
     </block>
 </template>
