@@ -54,7 +54,7 @@ const cartoons: cartoonIn[] = [
         svghref: 'https://github.com/hr1201/blog/blob/main/Rarrot/.vitepress/theme/components/cartoons/%E6%AC%A2%E8%BF%8E.vue'
     },
     {
-        gif: 'https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/welcome.gif',
+        gif: './images/cat.gif',
         img: 'https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202309031455622.png',
         introduce: 'welcome',
         ahref: '/cartoonsMD/O.o%E6%AC%A2%E8%BF%8E.html',

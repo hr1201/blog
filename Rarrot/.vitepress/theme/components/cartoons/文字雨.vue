@@ -18,7 +18,7 @@ onMounted(() => {
     // 将画布的宽度和高度分别设置为屏幕的宽度和高度
     canvas.value.width = screen.availWidth;
     canvas.value.height = screen.availHeight;
-    ctx.font = "20px Arial";
+    ctx.font = "25px Arial";
     let str = 'Rarrot'.split('');
 
     // 维护代码语的位置

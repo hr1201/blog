@@ -33,12 +33,12 @@ layout: page
 
 ---
 <script setup>
-// import card from '../../.vitepress/theme/components/homeCard.vue'
+import card from '../../.vitepress/theme/components/homeCard.vue'
 
 </script>
 
 
-<!-- <card /> -->
+<card />
 
 
 

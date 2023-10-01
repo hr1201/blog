@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress'
-import sidebarAuto from './sidebarAuto'
+import sidebarAuto from './sidebarAuto.js'
 // 用于生成sitemap
 import { createContentLoader } from 'vitepress'
 import { SitemapStream } from 'sitemap'

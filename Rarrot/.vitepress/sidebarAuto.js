@@ -1,5 +1,6 @@
 import { resolve } from 'path';
 import dirTree from 'directory-tree';
+// import path from 'node:path';
 
 function toSidebarOption(tree = []) {
   if (!Array.isArray(tree)) return [];
@@ -68,12 +69,9 @@ function sidebarAuto(srcPath, title) {
 // ).concat(sidebarAuto(
 //   path.resolve(__dirname, "../articles/JavaScript/问题"),
 //   "问题"
-// ).concat(sidebarAuto(
-//   path.resolve(__dirname, "../articles/JavaScript/你好"),
-//   "你好"
-// )))
+// ))
 // console.log(a.forEach((value) => {
-//   // console.log(value)
+//   console.log(value)
 // }))
 
 export default sidebarAuto;

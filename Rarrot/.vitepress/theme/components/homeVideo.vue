@@ -2,10 +2,10 @@
     <section class="videos">
         <video class="video-slide" autoplay muted loop>
             <source v-if="!curDeviceIsMobile"
-                src="https://hr-1313954536.cos.ap-guangzhou.myqcloud.com/pexels-ambientnature-atmosphere-5948574%20%281440p%29.mp4"
+                src="./images/rain2.mp4"
                 type="video/mp4" />
             <source v-else
-                src="./images/vaagenes.mp4"
+                src="./images/rain.mp4"
                 type="video/mp4" />
 
         </video>
