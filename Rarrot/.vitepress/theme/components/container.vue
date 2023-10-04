@@ -20,14 +20,14 @@
       </div>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { useData,useRoute } from 'vitepress'
 import Giscus from '@giscus/vue'
 import { reactive, ref, watch } from "vue";
 
 const { isDark,title } = useData()
 const route = useRoute();
-console.log()
+
 const showComment = ref(true);
 watch(
 	() => route.path,

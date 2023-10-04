@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": [
+        "./*"
+      ]
+    },
+    "lib": [
+      "esnext",
+      "dom"
+    ]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "Rarrot/.vitepress/**/*.ts",
+    "Rarrot/.vitepress/**/*.tsx",
+    "Rarrot/.vitepress/**/*.vue", 
+  ],
+  "exclude": [
+    "**/node_modules/**", "**/dist/**", "template"
+  ],
+  "ts-node": {
+		"esm": true,
+		"experimentalSpecifierResolution": "node"
+	}
+}

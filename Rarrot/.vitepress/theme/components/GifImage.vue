@@ -2,12 +2,13 @@
     <div class="blocks-imgs">
         <img v-show="!showPlaceholder" ref="gifImage" :src="gifSrc" alt="cartoon-img" @load="onGifLoad" class="gif-image" />
         <img v-show="showPlaceholder" :src="placeholderSrc" alt="placeholder-img" class="placeholder-image" />
-
     </div>
 </template>
   
-<script>
-export default {
+<script lang="ts">
+import { defineComponent, ref } from 'vue';
+
+export default defineComponent({
     props: {
         gifSrc: {
             type: String,
@@ -18,19 +19,21 @@ export default {
             required: true,
         },
     },
-    data() {
+    setup() {
+        const showPlaceholder = ref(true);
+
+        function onGifLoad() {
+            showPlaceholder.value = false;
+        }
+
         return {
-            showPlaceholder: true,
+            showPlaceholder,
+            onGifLoad,
         };
     },
-    methods: {
-        onGifLoad() {
-            this.showPlaceholder = false;
-
-        },
-    },
-};
+});
 </script>
+  
   
 <style scoped>
 .blocks-imgs {

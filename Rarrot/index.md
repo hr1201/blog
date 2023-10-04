@@ -33,10 +33,11 @@ layout: home
 
 ---
 <script setup>
-import videos from './.vitepress/theme/components/homeVideo.vue'
+// import videos from './.vitepress/theme/components/homeVideo.vue'
+import imgs from './.vitepress/theme/components/homeImg.vue'
 
 </script>
 
-<videos />
+<!-- <videos /> -->
 
-
+<imgs />

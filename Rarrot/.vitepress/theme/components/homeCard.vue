@@ -13,7 +13,7 @@
                     </div>
                     <div class="blocks-text">
                         <p style="font-size:15px;color:#3e52e0;">{{ cartoon.introduce }}</p>
-                        <p>欢迎来到Rarrot的动画库</p>
+                        <p>{{ cartoon.context }}</p>
                         <div class="blocks-url">
                             <a :href="cartoon.ahref">Visit</a>
                             <!-- github图标 -->
@@ -41,6 +41,7 @@ interface cartoonIn {
     gif: string,
     img: string,
     introduce: string,
+    context:string,
     ahref: string,
     svghref: string,
 }
@@ -50,6 +51,7 @@ const cartoons: cartoonIn[] = [
         gif: 'https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202310012037788.png',
         img: 'https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202310012037788.png',
         introduce: 'welcome',
+        context:'欢迎来到Rarrot的动画库',
         ahref: '/cartoonsMD/O.o欢迎.html',
         svghref: 'https://github.com/hr1201/blog/blob/main/Rarrot/.vitepress/theme/components/cartoons/欢迎.vue'
     },
@@ -57,6 +59,7 @@ const cartoons: cartoonIn[] = [
         gif: 'https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/cat.gif',
         img: 'https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202310011758438.png',
         introduce: 'welcome',
+        context:'01彩虹猫',
         ahref: '/cartoonsMD/彩虹猫.html',
         svghref: 'https://github.com/hr1201/blog/blob/main/Rarrot/.vitepress/theme/components/cartoons/彩虹猫.vue'
     },
@@ -64,6 +67,7 @@ const cartoons: cartoonIn[] = [
         gif: 'https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202310011800704.png',
         img: 'https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202310011800704.png',
         introduce: 'welcome',
+        context:'文字雨',
         ahref: '/cartoonsMD/文字雨.html',
         svghref: 'https://github.com/hr1201/blog/blob/main/Rarrot/.vitepress/theme/components/cartoons/文字雨.vue'
     },
@@ -71,6 +75,7 @@ const cartoons: cartoonIn[] = [
         gif: 'https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/GIF%202023-10-1%2020-20-41.gif',
         img: 'https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202310012023351.png',
         introduce: 'welcome',
+        context:'ikun篮球',
         ahref: '/cartoonsMD/篮球.html',
         svghref: 'https://github.com/hr1201/blog/blob/main/Rarrot/.vitepress/theme/components/cartoons/ikun.vue'
     }

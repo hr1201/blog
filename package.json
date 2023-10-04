@@ -26,6 +26,9 @@
   "dependencies": {
     "@giscus/vue": "^2.3.0",
     "directory-tree": "^3.5.1",
-    "element-plus": "^2.3.14"
+    "echarts": "^5.4.3",
+    "element-plus": "^2.3.14",
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.2.2"
   }
 }
