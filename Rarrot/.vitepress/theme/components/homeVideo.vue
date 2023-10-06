@@ -52,7 +52,7 @@ onBeforeMount(() => {
 
 </script>
 <style lang='less' scoped>
-@import url('https://fonts.googleapis.com/css2?family=Marck+Script&family=Nabla&family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@500&display=swap');
 
 // body{
 //     background: fixed;

@@ -18,11 +18,14 @@ export default {
       "doc-before":()=>h(imagePreview),
     })
   },
-  enhanceApp({ app }:any) {
+  enhanceApp({ app, }:any) {
     app
       .component('containers', containers)
       .component('test', test)
       .component('findCount',findCount)
       .component('block',block)
-  }
+  },
+  // extends({
+    
+  // })
 }

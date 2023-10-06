@@ -23,7 +23,8 @@ export default defineConfig({
     ['meta', { name: 'baidu-site-verification', content: 'codeva-90hqhBZdbA' }]
   ],
   lastUpdated: true,
-  // cleanUrls: true,
+  cleanUrls: true,
+  
   markdown: {
     lineNumbers: true,
     // https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-themes
