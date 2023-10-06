@@ -4,7 +4,7 @@
             <p>你好啊</p>
         </div>
         <div class="img">
-            <img src="./images/rabbit.png" alt="rabbit">
+            <img src="/rabbit.png" alt="rabbit">
         </div>
     </div>
 </template>
@@ -21,7 +21,7 @@ import { ref } from 'vue'
     height: 100vh;
     background-color: #8cacb3;
     .description{
-
+        
     }
     .img{
         width: 40%;
