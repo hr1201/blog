@@ -10,7 +10,7 @@ hero:
    text: "个人博客网站"
    tagline: 
    image:
-     src: ./.vitepress/theme/components/images/rabbit.png
+     src: /rabbit.png
      alt: Rarrot
    actions:
      - theme: brand
