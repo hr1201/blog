@@ -23,7 +23,7 @@ export default defineConfig({
     ['meta', { name: 'baidu-site-verification', content: 'codeva-90hqhBZdbA' }]
   ],
   lastUpdated: true,
-  cleanUrls: true,
+  // cleanUrls: true,
   
   markdown: {
     lineNumbers: true,
