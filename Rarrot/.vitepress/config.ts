@@ -81,7 +81,7 @@ export default defineConfig({
     sidebarMenuLabel: '目录',
     returnToTopLabel: '回到顶部',
     editLink: {
-      pattern: 'https://github.com/hr1201/hr1201.github.io/blob/main/Rarrot/:path',
+      pattern: 'https://github.com/hr1201/blog/main/Rarrot/:path',
       text: '在GitHub编辑此页',
     },
     socialLinks: [
