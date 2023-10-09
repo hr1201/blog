@@ -5,7 +5,7 @@ import './style.css'
 import containers from './components/container.vue'
 import test from './components/test.vue'
 import findCount from './components/findCount.vue'
-import block from './components/cartoons/animationBlock.vue'
+import block from './components/animationBlock.vue'
 import imagePreview from "./components/imagePreview.vue"
 
 export default {

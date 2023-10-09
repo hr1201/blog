@@ -1,5 +1,5 @@
 <script setup>
-import welcome from '../.vitepress/theme/components/cartoons/欢迎.vue'
+import welcome from './components/欢迎.vue'
 
 </script>
 

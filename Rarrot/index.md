@@ -18,7 +18,7 @@ hero:
        link: /articles/JavaScript/0认识JavaScript
      - theme: alt
        text: 示例
-       link: /articles/hello
+       link: /articles/Vue/01-Vue3基础语法
 
 features:
    - icon: ⚡️

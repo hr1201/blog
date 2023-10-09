@@ -262,7 +262,7 @@ function pageUpdate() {
 ## 效果展示
 
 <script setup>
-import BarChart from '../../../Rarrot/.vitepress/theme/components/BarChart/BarChartuse.vue'
+import BarChart from './components/BarChartuse.vue'
 
 </script>
 

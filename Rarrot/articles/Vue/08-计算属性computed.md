@@ -197,7 +197,7 @@ const addItem = () => {
 <br/>
 
 <script setup>
-import tables from '../../../Rarrot/.vitepress/theme/components/demo/table.vue'
+import tables from './components/table.vue'
 
 </script>
 

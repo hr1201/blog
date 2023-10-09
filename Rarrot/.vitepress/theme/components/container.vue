@@ -44,7 +44,6 @@ watch(
 	{
 		immediate: true,
 	}
-
 );
 </script>
 

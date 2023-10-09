@@ -1,5 +1,0 @@
-
-# Hello world!
-
-<findCount/>
-<test />

@@ -91,7 +91,7 @@
   --vp-inverted-image-filter: var(--vp-inverted-image-dark-filter);
   --vp-c-text-code: #c7254e;
   --vp-c-mute: #313136;
-  --vp-c-text-dark-1: rgba(256, 256, 256);
+  --vp-c-text-dark-1: rgba(255, 255, 255, 0.9);
   --vp-code-color: #c7254e;
   --vp-code-bg: #272a2f;
 }
@@ -217,7 +217,7 @@ main .vp-doc a:hover {
 
 @media screen and (min-width: 960px) and (max-width: 1120px) {
   .VPContent.has-sidebar {
-    margin-top: 60px !important;
+    /* margin-top: 60px !important; */
   }
 }
 

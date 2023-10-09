@@ -86,7 +86,7 @@ section {
         color: #fff;
         width: 75%;
         margin-top: 50px;
-        font-family: 'Ma Shan Zheng', cursive;
+        // font-family: 'Ma Shan Zheng', cursive;
         h1 {
             font-size: 4em;
             font-weight: 900;
@@ -96,7 +96,7 @@ section {
             span {
                 font-size: 1.2em;
                 font-weight: 600;
-                font-family: 'Marck Script', cursive;
+                // font-family: 'Marck Script', cursive;
             }
         }
 

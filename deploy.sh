@@ -3,7 +3,7 @@
 set -e
 
 # 构建
-npm run Rarrot:build
+pnpm run Rarrot:build
 
 # 进入待发布的目录
 cd Rarrot/.vitepress/dist

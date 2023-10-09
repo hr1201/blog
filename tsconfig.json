@@ -25,6 +25,9 @@
     "Rarrot/.vitepress/**/*.ts",
     "Rarrot/.vitepress/**/*.tsx",
     "Rarrot/.vitepress/**/*.vue", 
+    "Rarrot/**/*.ts",
+    "Rarrot/**/*.tsx",
+    "Rarrot/**/*.vue", 
   ],
   "exclude": [
     "**/node_modules/**", "**/dist/**", "template"
