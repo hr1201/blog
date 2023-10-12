@@ -33,8 +33,7 @@ export default defineComponent({
     },
 });
 </script>
-  
-  
+
 <style scoped>
 .blocks-imgs {
     position: relative;

@@ -90,8 +90,9 @@ svg {
     svg {
         width: 65vw;
         height: 48vh;
-        transform: rotate(90deg);
         margin: auto 0;
+        writing-mode: vertical-rl;
+
     }
 } */
 </style>

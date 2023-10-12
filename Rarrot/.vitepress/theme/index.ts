@@ -3,7 +3,6 @@ import { h } from 'vue'
 import Theme from 'vitepress/theme'
 import './style.css'
 import containers from './components/container.vue'
-import test from './components/test.vue'
 import findCount from './components/findCount.vue'
 import block from './components/animationBlock.vue'
 import imagePreview from "./components/imagePreview.vue"
@@ -21,7 +20,6 @@ export default {
   enhanceApp({ app, }:any) {
     app
       .component('containers', containers)
-      .component('test', test)
       .component('findCount',findCount)
       .component('block',block)
   },

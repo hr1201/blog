@@ -1,12 +1,13 @@
 import { defineConfig } from 'vitepress'
-import sidebarAuto from './sidebarAuto'
+// import sidebarAuto from './sidebarAuto'
 // 用于生成sitemap
 import { createContentLoader } from 'vitepress'
 import { SitemapStream } from 'sitemap'
 import { createWriteStream } from 'node:fs'
 import { resolve } from 'node:path'
 
-import path from 'node:path';
+import { nav } from './configs/nav'
+import { sidebar } from './configs/sidebar'
 
 interface Link {
   url: string;
@@ -85,8 +86,9 @@ export default defineConfig({
       text: '在GitHub编辑此页',
     },
     socialLinks: [
+      { icon: 'discord', link: 'https://discord.gg/Bad7NNcr' },
       { icon: 'github', link: 'https://github.com/hr1201' },
-      { icon: "twitter", link: "https://twitter.com/home" },
+      { icon: "twitter", link: "https://twitter.com/hungrng75647520" },
       // 自定义社交连接
       // {
       //  icon: {
@@ -95,69 +97,7 @@ export default defineConfig({
       //  link: "...",
       // },
     ],
-    nav: [
-      { text: '导航页', link: '/articles/导航/navigate' },
-      { text: '博客', link: '/articles/博客/关于博客建立过程' },
-      {
-        text: '前端',
-        items: [
-          { text: "HTML", link: "/articles/HTML/浏览器渲染过程" },
-          { text: "css", link: "/articles/css/css工作流程" },
-          { text: "JavaScript", link: "/articles/JavaScript/0认识JavaScript" },
-          { text: "typescript", link: "/articles/typescript/01-基础类型" },
-          { text: "Vue", link: "/articles/Vue/01-Vue3基础语法" },
-        ],
-      },
-      { text: '工具', link: '/articles/工具/nvm' },
-      { text: '动画', link: '/cartoonsMD/O.o欢迎' },
-    ],
-    sidebar: {
-      "/articles/博客": sidebarAuto(
-        path.resolve(__dirname, "../articles/博客"),
-      ),
-
-      "/articles/HTML": sidebarAuto(
-        path.resolve(__dirname, "../articles/HTML"),
-      ),
-      "/articles/css": sidebarAuto(
-        path.resolve(__dirname, "../articles/css"),
-      ),
-
-      // 定义"/articles/" 将此配置为路径，只有包含这个路径的才会出现侧边栏
-      "/articles/JavaScript": sidebarAuto(
-        path.resolve(__dirname, "../articles/JavaScript"),
-        "JavaScript"
-      ).concat(sidebarAuto(
-        path.resolve(__dirname, "../articles/JavaScript/问题"),
-        "问题"
-      )),
-
-      "/articles/typescript": sidebarAuto(
-        path.resolve(__dirname, "../articles/typescript"),
-      ).concat(sidebarAuto(
-        path.resolve(__dirname, "../articles/typescript/问题"),
-        "问题"
-      )),
-      
-      "/articles/Vue": sidebarAuto(
-        path.resolve(__dirname, "../articles/Vue"),
-      ).concat(sidebarAuto(
-        path.resolve(__dirname, "../articles/Vue/问题"),
-        "问题"
-      )).concat(sidebarAuto(
-        path.resolve(__dirname, "../articles/Vue/插件"),
-        "插件"
-      )),
-      
-      "/cartoonsMD": sidebarAuto(
-        path.resolve(__dirname, "../cartoonsMD"),
-        '动画'
-      ),
-      "/articles/工具": sidebarAuto(
-        path.resolve(__dirname, "../articles/工具"),
-        '工具'
-      ),
-    }
-
+    nav: nav,
+    sidebar: sidebar,
   },
 })

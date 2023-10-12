@@ -68,9 +68,7 @@ function sidebarAuto(srcPath: string, title?: string): SidebarItem[] {
       items: itemsWithData,
     },
   ];
-
 }
-
 
 // let a = sidebarAuto(path.resolve(__dirname, "../articles/JavaScript"),
 //   "JavaScript"

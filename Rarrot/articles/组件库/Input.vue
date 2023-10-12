@@ -1,38 +1,12 @@
 <template>
     <div class="inp-form">
-        <input class="inp" ref="input" v-model="message" placeholder="打开F12,进行输入测试" name="text" :required="true" type="text">
+        <input class="inp" name="text" :required="true" type="text" placeholder="打开F12,进行输入测试">
         <span class="inp-border"></span>
     </div>
-    <Button @click="stop" hoverF="停止" hoverS="点击!"></Button>
 </template>
 
 <script setup lang='ts'>
-import { ref, watchEffect } from 'vue'
-import Button from '../../组件库/Button.vue'
-
-let message = ref<string>('')
-
-let input = ref<HTMLInputElement>()
-
-const stop = watchEffect((oninvalidate) => {
-    console.log("🚀  inp", input.value)
-
-    // watchEffect是非惰性的，这里使用了message就会直接去监听message
-    console.log("🚀  message", message.value)
-    oninvalidate(() => {
-        console.log('before')
-    })
-}, {
-    // pre 组件更新前执行
-    // sync 强制效果始终同步触发
-    // post 组件更新后执行
-    flush: 'post',
-    // 可以用来debugger
-    // onTrigger(e) {
-    //     debugger
-    // }
-})
-
+import { ref } from 'vue'
 </script>
 <style scoped>
 .inp-form {
