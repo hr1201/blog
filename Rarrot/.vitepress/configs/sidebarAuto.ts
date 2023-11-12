@@ -10,7 +10,7 @@ interface SidebarItem {
   items?: SidebarItem[];
 }
 
-function toSidebarOption(tree:any[] = []): SidebarItem[] {
+function toSidebarOption(tree: any[] = []): SidebarItem[] {
   if (!Array.isArray(tree)) return [];
   // console.log(tree)
   return tree.map((v) => {
@@ -54,11 +54,11 @@ function sidebarAuto(srcPath: string, title?: string): SidebarItem[] {
     normalizePath: true,
   });
 
-  const sidebarItems = toSidebarOption(srcDir.children);  
+  const sidebarItems = toSidebarOption(srcDir.children);
 
   const itemsWithData = findItemsWithData(sidebarItems);
-  // console.log(itemsWithData);
 
+  // console.log(itemsWithData);
   return [
     {
       // 判断title有没有值，有就使用传入的title值
@@ -70,6 +70,21 @@ function sidebarAuto(srcPath: string, title?: string): SidebarItem[] {
   ];
 }
 
+export function configureServer(server: {
+  watcher: {
+    add: (arg0: string) => void; on: (arg0: string, arg1: (path // import path from 'node:path';
+      : any) => void) => void;
+  };
+}) {
+  const srcPath = '../../../Rarrot'; // 请替换为你的源文件路径
+  server.watcher.add(resolve(srcPath));
+  server.watcher.on('change', (path) => {
+    if (path.endsWith('.md')) {
+      // 当 .md 文件发生变化时，重新生成侧边栏
+      sidebarAuto(srcPath);
+    }
+  });
+}
 // let a = sidebarAuto(path.resolve(__dirname, "../articles/JavaScript"),
 //   "JavaScript"
 // ).concat(sidebarAuto(

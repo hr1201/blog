@@ -49,3 +49,5 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
         '工具'
     ),
 }
+
+// server.moduleGraph.onFileChange('/@siteData')

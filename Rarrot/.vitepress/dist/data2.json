@@ -1,0 +1,7 @@
+{
+    "data": {
+        "name": "Rarrot",
+        "url": "https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/rarrot.webp",
+        "desc": "计算属性是基于其他数据源（如 data、props 等）的值进行计算得到的，是缓存的，只有当依赖的数据源发生变化时，计算属性才会重新计算。"
+    }
+}
