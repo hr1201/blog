@@ -49,6 +49,7 @@ const syncVue = defineAsyncComponent(() => import('./components/骨架屏/sync.v
 在这个例子中，`syncVue.vue`的代码会被分割到一个单独的包中。当`syncVue组件`被实际需要时，Vue会自动加载这个包。
 
 ## 示例：
+
 <uses />
 
 <script setup lang='ts'>
