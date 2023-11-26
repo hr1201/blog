@@ -3,6 +3,35 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue';
 import { vitepressPlugin } from 'vite-plugin-vitepress';
 
+// 创建自定义插件
+const watchFileChangesPlugin = () => {
+  return {
+    name: "VitePluginAutoSidebar",
+    configureServer: ({ watcher, restart }) => {
+      const fsWatcher = watcher.add("*.md");
+      console.log('=================>修改'+fsWatcher)
+      fsWatcher.on("all", (event, filePath) => {
+        if (event === "addDir") return;
+        if (event === "unlinkDir") return;
+        if (event == "add") return;
+        if (event === "unlink") {
+          restart();
+          return;
+        }
+        if (event === "change") {
+          const title = matchTitle(filePath);
+          const route = getRoute(opts.root, filePath);
+          if (!route || !title) return;
+          // 未更新 title
+          if (title === titleCache[route]) return;
+          restart();
+          return;
+        }
+      });
+    },
+  };
+};
+
 export default defineConfig({
   plugins: [
     SearchPlugin({
@@ -11,7 +40,10 @@ export default defineConfig({
       placeholder: '搜索内容',
       buttonLabel: '搜索',
       previewLength: 10,
-    }), vue(), vitepressPlugin()
+    }), 
+    vue(), 
+    vitepressPlugin(),
+    watchFileChangesPlugin()
   ],
   resolve: {
     alias: {
