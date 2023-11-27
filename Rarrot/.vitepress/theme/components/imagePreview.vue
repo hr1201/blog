@@ -23,9 +23,9 @@ const previewImageInfo = reactive<{ url: string; list: string[]; idx: number }>(
 function previewImage(e: Event) {
     const target = e.target as HTMLElement
     const currentTarget = e.currentTarget as HTMLElement
-    if(route.path.includes('cartoonsMD')){
+    if (route.path.includes('cartoonsMD')) {
         show.value = false
-    }else if (target.tagName.toLowerCase() === 'img') {
+    } else if (target.tagName.toLowerCase() === 'img') {
         const imgs = currentTarget.querySelectorAll<HTMLImageElement>(
             '.content-container .main img'
         )
