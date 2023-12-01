@@ -12,7 +12,6 @@ interface SidebarItem {
 
 function toSidebarOption(tree: any[] = []): SidebarItem[] {
   if (!Array.isArray(tree)) return [];
-  // console.log(tree)
   return tree.map((v) => {
     if (v.children !== undefined) {
       return {

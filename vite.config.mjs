@@ -2,35 +2,7 @@ import { SearchPlugin } from 'vitepress-plugin-search'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue';
 import { vitepressPlugin } from 'vite-plugin-vitepress';
-
-// 创建自定义插件
-const watchFileChangesPlugin = () => {
-  return {
-    name: "VitePluginAutoSidebar",
-    configureServer: ({ watcher, restart }) => {
-      const fsWatcher = watcher.add("*.md");
-      console.log('=================>修改'+fsWatcher)
-      fsWatcher.on("all", (event, filePath) => {
-        if (event === "addDir") return;
-        if (event === "unlinkDir") return;
-        if (event == "add") return;
-        if (event === "unlink") {
-          restart();
-          return;
-        }
-        if (event === "change") {
-          const title = matchTitle(filePath);
-          const route = getRoute(opts.root, filePath);
-          if (!route || !title) return;
-          // 未更新 title
-          if (title === titleCache[route]) return;
-          restart();
-          return;
-        }
-      });
-    },
-  };
-};
+import watchFiles from './Rarrot/plugins/watchfiles.ts'
 
 export default defineConfig({
   plugins: [
@@ -43,7 +15,7 @@ export default defineConfig({
     }), 
     vue(), 
     vitepressPlugin(),
-    watchFileChangesPlugin()
+    watchFiles()
   ],
   resolve: {
     alias: {

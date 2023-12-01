@@ -89,7 +89,7 @@ const send = async () => {
 
 
 ## 源码解读
-在源码中，`nextTick()`是将传入的函数转换为异步函数：
+在源码中，`nextTick()`是将传入的函数放到Promise中，然后执行一个微任务：
 
 ::: code-group
 ```ts [nextTick()]
@@ -117,3 +117,6 @@ let currentFlushPromise: Promise<void> | null = null
 const resolvedPromise = /*#__PURE__*/ Promise.resolve() as Promise<any>
 ```
 :::
+
+
+<!-- 更新队列：。。。实力不足，待定 -->
