@@ -30,6 +30,7 @@ export default defineConfig({
     lineNumbers: true,
     // https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-themes
     // theme: 'one-dark-pro',
+    math: true
   },
 
   

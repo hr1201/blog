@@ -263,7 +263,6 @@ function pageUpdate() {
 
 <script setup>
 import BarChart from './components/BarChartuse.vue'
-
 </script>
 
 <ClientOnly>
