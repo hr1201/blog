@@ -25,8 +25,8 @@ Remote：远程仓库
 ```shell
 Git 全局设置:
 
-git config --global user.name "hr121"
-git config --global user.email "568127468@qq.com"
+git config --global user.name "你的github/gitee仓库名"
+git config --global user.email "你的email"
 
 创建 git 仓库:
 
