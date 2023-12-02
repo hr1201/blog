@@ -262,7 +262,7 @@ Wraps in a <div class="vp-raw">
   }
   ```
 
-  它在hood下使用 [ `postcss-prefix-selector`](https：//github.com/postcss/postcss-load-config)。你可以像这样传递它的选项：
+  它在hood下使用 [ `postcss-prefix-selector`](https://github.com/postcss/postcss-load-config)。你可以像这样传递它的选项：
 
   ```js
   postcssIsolateStyles({
@@ -883,4 +883,4 @@ export default defineConfig({
 })
 ```
 
-请参阅中[配置参考：应用配置](../reference/site-config#markdown)的可配置属性的完整列表。
+请参阅中[配置参考：应用配置](https://vitepress.dev/reference/site-config#markdown)的可配置属性的完整列表。
