@@ -5,9 +5,9 @@ import { createContentLoader } from 'vitepress'
 import { SitemapStream } from 'sitemap'
 import { createWriteStream } from 'node:fs'
 import { resolve } from 'node:path'
-
 import { nav } from './configs/nav'
 import { sidebar } from './configs/sidebar'
+import { FileHMR } from "./configs/watchfiles";
 
 interface Link {
   url: string;
@@ -32,7 +32,6 @@ export default defineConfig({
     // theme: 'one-dark-pro',
     math: true
   },
-
   
   // 用于生成sitemap
   transformHtml: (_, id, { pageData }) => {
@@ -99,6 +98,11 @@ export default defineConfig({
       // },
     ],
     nav: nav,
-    sidebar: sidebar,
+    sidebar: sidebar, 
   },
+  vite:{
+    plugins:[
+      FileHMR()
+    ]
+  }
 })

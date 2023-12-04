@@ -1,21 +1,11 @@
-import { SearchPlugin } from 'vitepress-plugin-search'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue';
 import { vitepressPlugin } from 'vite-plugin-vitepress';
-import watchFiles from './Rarrot/plugins/watchfiles.ts'
 
 export default defineConfig({
   plugins: [
-    SearchPlugin({
-      encode: false,
-      tokenize: 'full',
-      placeholder: '搜索内容',
-      buttonLabel: '搜索',
-      previewLength: 10,
-    }), 
     vue(), 
     vitepressPlugin(),
-    watchFiles()
   ],
   resolve: {
     alias: {

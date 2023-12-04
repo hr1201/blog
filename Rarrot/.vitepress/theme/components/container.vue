@@ -3,7 +3,7 @@
         <Giscus
 			v-if="showComment"
 			:is="'script'"
-			:key="title"
+			:key="title.value"
 			repo= "hr1201/gitalk-evalute"
 			repo-id= "R_kgDOJ9WSwA"
 			category= "Announcements"
@@ -23,7 +23,7 @@
 <script lang="ts" setup>
 import { useData,useRoute } from 'vitepress'
 import Giscus from '@giscus/vue'
-import { reactive, ref, watch } from "vue";
+import { ref, watch } from "vue";
 
 const { isDark,title } = useData()
 const route = useRoute();
