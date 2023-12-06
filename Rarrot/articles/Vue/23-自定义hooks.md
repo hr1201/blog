@@ -7,7 +7,7 @@
 
 [官方对hooks的说明](https://cn.vuejs.org/guide/reusability/composables.html)
 
-[antfu写的hooks库](https://vueuse.org/guide/)
+[antfu写的hooks库useVue](https://vueuse.org/guide/)
 
 ::: tip 提示
 hooks只能在 <script setup\> 或 setup() 钩子中被调用。
@@ -65,7 +65,7 @@ export default function useFactorial(inputNumber: Ref<number>) {
 
 <script setup lang='ts'>
 import { ref } from 'vue'
-import useFactorial from'./hooks/useFactorial.ts';
+import useFactorial from './hooks/useFactorial.ts';
 
 const inputNumber = ref(1);
 // 直接运用导出的响应式变量：
