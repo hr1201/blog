@@ -33,7 +33,7 @@ watch(
 	() => route.path,
 	() => {
 		showComment.value = false;
-		if(route.path.includes('cartoonsMD')){
+		if(route.path.includes('cartoonsMD')||route.path.includes('navigate')){
 			showComment.value=false
 		}else{
 			setTimeout(() => {

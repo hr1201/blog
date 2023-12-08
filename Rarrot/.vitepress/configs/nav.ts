@@ -1,10 +1,10 @@
 import type { DefaultTheme } from 'vitepress'
  
 export const nav: DefaultTheme.Config['nav'] = [
-    { text: '导航页', link: '/articles/导航/navigate' },
+    { text: '导航', link: '/articles/导航/navigate' },
     { text: '博客', link: '/articles/博客/关于博客建立过程' },
     {
-        text: '前端',
+        text: '前端笔记',
         items: [
             { text: "HTML", link: "/articles/HTML/浏览器渲染过程" },
             { text: "css", link: "/articles/css/css工作流程" },

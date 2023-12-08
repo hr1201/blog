@@ -1,1 +1,0 @@
-import{c as t,o as e}from"./chunks/framework.c3LoRyG_.js";const n=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"cartoonsMD/water.md","filePath":"cartoonsMD/water.md","lastUpdated":1696861475000}'),a={name:"cartoonsMD/water.md"},_=Object.assign(a,{setup(r){return(o,s)=>(e(),t("div"))}});export{n as __pageData,_ as default};

@@ -1,43 +1,20 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
-layout: page
-
-# title: VitePress
-# titleTemplate: Vite & Vue Powered Static Site Generator
-
-# hero:
-#    name: "Rarrot"
-#    text: "个人博客网站"
-#    tagline: 
-#    image:
-#      src: ./white-cloud.png
-#      alt: Rarrot
-#    actions:
-#      - theme: brand
-#        text: 我的博客
-#        link: /articles/JavaScript/0认识JavaScript
-#      - theme: alt
-#        text: 示例
-#        link: /articles/hello
-
-# features:
-#    - icon: ⚡️
-#      title: 这是一个闪电图标
-#      details: wa
-#    - icon: 🖖
-#      title: 这是一个手掌图标
-#      details: good！
-#    - icon: 🛠️
-#      title: 这是一个修理图标
-#      details: fuck*
-
+layoutClass: r-nav-layout
+outline: [2, 3, 4]
 ---
-<script setup>
-import card from '../../.vitepress/theme/components/homeCard.vue'
 
+<script setup>
+import NavLinks from './components/NavLinks.vue'
+import { NAV_DATA } from './data'
 </script>
 
-<card />
+<style src="./index.less"></style>
+
+# 前端导航
+
+<NavLinks v-for="{title, items} in NAV_DATA" :title="title" :items="items"/>
 
 
-
+::: tip 该导航由 maomao 开发，版权声明：https://github.com/maomao1996/vitepress-nav-template ，本站在此基础上添加了icon图标的懒加载。
+:::
