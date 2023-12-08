@@ -429,11 +429,6 @@ export const NAV_DATA: NavData[] = [
                 link: 'https://daily-blog.chlinlearn.top/',
             },
             {
-                title: 'v2ex',
-                icon: 'https://www.v2ex.com/favicon.ico',
-                link: 'https://www.v2ex.com/',
-            },
-            {
                 title: '前端技术文章',
                 icon: 'https://fed.chanceyu.com/static/favicon.ico',
                 link: 'https://fed.chanceyu.com/',

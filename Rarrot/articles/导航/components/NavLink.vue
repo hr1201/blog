@@ -62,6 +62,10 @@ let vLazy: Directive<HTMLImageElement, string> = async (el, bingding) => {
         obServe.unobserve(el)
       }
     },
+    {
+      rootMargin: '0px',
+      threshold: 0.000001,
+    }
   )
   // 将el传入obServe中进行监听
   obServe.observe(el)
