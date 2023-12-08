@@ -149,7 +149,7 @@
     display: none;
   }
 
-  .content-body {
+  /* .content-body {
     pointer-events: none;
     border: none;
     background-color: transparent !important;
@@ -157,7 +157,7 @@
 
   .VPNavBarSearch {
     pointer-events: none;
-  }
+  } */
 }
 
 /* 对头像和博客名开启放大的动画 */
