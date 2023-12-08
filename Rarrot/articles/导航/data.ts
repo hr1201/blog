@@ -385,7 +385,7 @@ export const NAV_DATA: NavData[] = [
             },
             {
                 title: 'V2EX',
-                icon: 'https://www.v2ex.com/static/icon-192.png',
+                icon: 'https://www.v2ex.com/favicon.ico',
                 desc: '一个关于分享和探索的地方',
                 link: 'https://www.v2ex.com',
             },
