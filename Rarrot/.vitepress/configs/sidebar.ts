@@ -26,6 +26,8 @@ function generateSidebar() {
             path.resolve(__dirname, "../../articles/typescript"),
         ).concat(sidebarAuto(
             path.resolve(__dirname, "../../articles/typescript/问题"),
+        )).concat(sidebarAuto(
+            path.resolve(__dirname, "../../articles/typescript/算法"),
         )),
 
         "/articles/Vue": sidebarAuto(
@@ -35,6 +37,10 @@ function generateSidebar() {
         )).concat(sidebarAuto(
             path.resolve(__dirname, "../../articles/Vue/插件"),
         )),
+
+        "/articles/Nestjs": sidebarAuto(
+            path.resolve(__dirname, "../../articles/Nestjs"),
+        ),
 
         "/cartoonsMD": sidebarAuto(
             path.resolve(__dirname, "../../cartoonsMD"),
