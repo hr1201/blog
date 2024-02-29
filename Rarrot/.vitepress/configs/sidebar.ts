@@ -20,14 +20,14 @@ function generateSidebar() {
             path.resolve(__dirname, "../../articles/JavaScript"),
         ).concat(sidebarAuto(
             path.resolve(__dirname, "../../articles/JavaScript/问题"),
+        )).concat(sidebarAuto(
+            path.resolve(__dirname, "../../articles/JavaScript/脚本"),
         )),
 
         "/articles/typescript": sidebarAuto(
             path.resolve(__dirname, "../../articles/typescript"),
         ).concat(sidebarAuto(
             path.resolve(__dirname, "../../articles/typescript/问题"),
-        )).concat(sidebarAuto(
-            path.resolve(__dirname, "../../articles/typescript/算法"),
         )),
 
         "/articles/Vue": sidebarAuto(

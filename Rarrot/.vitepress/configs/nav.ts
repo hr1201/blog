@@ -14,6 +14,7 @@ export const nav: DefaultTheme.Config['nav'] = [
             { text: "Nestjs", link: "/articles/Nestjs/依赖注入和控制反转" },
         ],
     },
+    { text: '算法', link: '/articles/算法/好用方法' },
     { text: '工具', link: '/articles/工具/nvm' },
     { text: '动画', link: '/cartoonsMD/O.o欢迎' },
 ]
