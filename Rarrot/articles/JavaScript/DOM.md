@@ -49,8 +49,6 @@ DOM将整个页面抽象为一组分层节点。**HTML**或**XML**页面的每�
 
 到现在，W3C作为DOM Living Standard（快照称为DOM4）进行维护DOM，而不是Level。DOM4包括替代Mutation Events的Mutation Observers。
 
-
-
 ## 其他DOM
 
 除了DOM Core和DOM HTML接口，其他语言也发布了自身的DOM标准，以下为基于XML的语言：
@@ -58,8 +56,3 @@ DOM将整个页面抽象为一组分层节点。**HTML**或**XML**页面的每�
 1. 可伸缩矢量图(SVG)
 2. 数学标记语言(MathML)
 3. 同步多媒体集成语言(SMIL)
-
-
-
-
-

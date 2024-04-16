@@ -1,10 +1,10 @@
 import type { DefaultTheme } from 'vitepress'
- 
+
 export const nav: DefaultTheme.Config['nav'] = [
     { text: '导航', link: '/articles/导航/navigate' },
     { text: '博客', link: '/articles/博客/关于博客建立过程' },
     {
-        text: '前端笔记',
+        text: '前端',
         items: [
             { text: "HTML", link: "/articles/HTML/浏览器渲染过程" },
             { text: "css", link: "/articles/css/css工作流程" },
@@ -14,7 +14,16 @@ export const nav: DefaultTheme.Config['nav'] = [
             { text: "Nestjs", link: "/articles/Nestjs/依赖注入和控制反转" },
         ],
     },
-    { text: '算法', link: '/articles/算法/好用方法' },
+    {
+        text: '后端',
+        items: [
+            { text: "Nest", link: "/articles/后端/Nestjs/nestcli" },
+            { text: "Nginx", link: "/articles/后端/Nginx/Nginx" },
+        ]
+    },
+    { text: '算法', link: '/articles/数据结构与算法/其他/好用方法' },
+    { text: '面试题', link: '/articles/面试题/JavaScript基础' },
+    { text: '网络', link: '/articles/网络/TCP-IP模型' },
     { text: '工具', link: '/articles/工具/nvm' },
     { text: '动画', link: '/cartoonsMD/O.o欢迎' },
 ]

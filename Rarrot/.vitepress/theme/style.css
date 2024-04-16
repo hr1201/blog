@@ -7,6 +7,7 @@
  * Colors
  * -------------------------------------------------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Nabla');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
 
 :root {
   --vp-c-brand: #646cff;
@@ -105,11 +106,23 @@
 }
 
 /**
+ * Component: homepage-homeSimple
+ * -------------------------------------------------------------------------- */
+
+:root{
+  --background-body: #fff;
+  --text-main: #36393b;
+  --text-secondary: #6b6f72;
+  --primary-color: #548e9b;
+  --font-family-serif: "Merriweather", serif;
+  --font-family-sans: "Fira Sans", sans-serif;
+}
+
+/**
  * 特殊配置
  * -------------------------------------------------------------------------- */
 
-.VPNavBarTitle,
-.VPHero .name span{
+.VPNavBarTitle{
   font-family: 'Nabla', cursive;
 }
 
@@ -143,7 +156,7 @@
   background-color: transparent !important;
 }
 
-.VPNavBar {
+/* .VPNavBar {
   .curtain {
     display: none;
   }
@@ -157,7 +170,7 @@
   .VPNavBarSearch {
     pointer-events: none;
   }
-}
+} */
 
 /* 对头像和博客名开启放大的动画 */
 .VPNavBarTitle .title {

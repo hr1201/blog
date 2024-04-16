@@ -25,5 +25,4 @@ nest g resource user
 ```
 ![](https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202401081753544.png)
 
-## 控制器
 

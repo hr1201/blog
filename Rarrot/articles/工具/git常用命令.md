@@ -121,3 +121,36 @@ git config --global --unset https.proxy
 ```shell
 git remote set-url origin git@github.com:hr1201/hr1201.github.io.git
 ```
+
+<br/>
+
+在本地使用`master`分支，需要将代码推送到`problem_management`分支中，由于有文件冲突，不能直接合并；通过以下命令也报错`failed to push refs`：
+```shell
+xxxxx@xxxxxxxx MINGW64 /d/课内文档/企业项目实践/AQadmin (master)
+$ git push huawei master:problem_management
+To https://codehub.devcloud.cn-north-4.huaweicloud.com/b112fe395974462aa5dca323e789cbf6/Interactive_Quiz_Vue.git
+ ! [rejected]        master -> problem_management (non-fast-forward)
+error: failed to push some refs to 'https://codehub.devcloud.cn-north-4.huaweicloud.com/b112fe395974462aa5dca323e789cbf6/Interactive_Quiz_Vue.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+
+```
+
+原因是合并的本地分支和远程分支没有共同的提交历史记录，之后通过以下命令解决：
+```shell
+xxxxx@xxxxxxxx MINGW64 /d/课内文档/企业项目实践/AQadmin (master)
+$ git merge huawei/problem_management --allow-unrelated-histories
+Merge made by the 'ort' strategy.
+
+xxxxx@xxxxxxxx MINGW64 /d/课内文档/企业项目实践/AQadmin (master)
+$ git push huawei master:problem_management
+Enumerating objects: 88, done.
+Counting objects: 100% (88/88), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (73/73), done.
+Writing objects: 100% (86/86), 439.26 KiB | 9.35 MiB/s, done.
+Total 86 (delta 4), reused 0 (delta 0), pack-reused 0
+```

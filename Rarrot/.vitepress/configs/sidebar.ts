@@ -38,8 +38,12 @@ function generateSidebar() {
             path.resolve(__dirname, "../../articles/Vue/插件"),
         )),
 
-        "/articles/Nestjs": sidebarAuto(
-            path.resolve(__dirname, "../../articles/Nestjs"),
+        "/articles/后端/Nestjs": sidebarAuto(
+            path.resolve(__dirname, "../../articles/后端/Nestjs"),
+        ),
+
+        "/articles/后端/Nginx": sidebarAuto(
+            path.resolve(__dirname, "../../articles/后端/Nginx"),
         ),
 
         "/cartoonsMD": sidebarAuto(
@@ -48,6 +52,22 @@ function generateSidebar() {
         ),
         "/articles/工具": sidebarAuto(
             path.resolve(__dirname, "../../articles/工具"),
+        ),
+
+        "/articles/网络": sidebarAuto(
+            path.resolve(__dirname, "../../articles/网络"),
+        ),
+
+        "/articles/数据结构与算法": sidebarAuto(
+            path.resolve(__dirname, "../../articles/数据结构与算法/数据结构"),
+        ).concat(sidebarAuto(
+            path.resolve(__dirname, "../../articles/数据结构与算法/算法"),
+        )).concat(sidebarAuto(
+            path.resolve(__dirname, "../../articles/数据结构与算法/其他"),
+        )),
+
+        "/articles/面试题": sidebarAuto(
+            path.resolve(__dirname, "../../articles/面试题"),
         ),
     }
 }
