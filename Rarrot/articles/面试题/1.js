@@ -1,25 +1,42 @@
-function doStep1(init, callback) {
-  const result = init + 1;
-  callback(result);//传入回调函数
-}
-function doStep2(init, callback) {
-  const result = init + 2;
-  callback(result);
-}
-function doStep3(init, callback) {
-  const result = init + 3;
-  callback(result);
-}
-function doOperation() {
-  doStep1(0, result1 => {
-    doStep2(result1, result2 => {
-      doStep3(result2, result3 => {
-        console.log(`结果：${result3}`);
-      });
+const promiseAll = (functions) => {
+  let len = functions.length;
+  let arr = new Array(len);
+  return new Promise((resolve, reject) => {
+    let count = 0;
+    functions.forEach(async (fn, index) => {
+      try {
+        const val = await fn();
+        arr[index] = val;
+        count++;
+        if (count === len) {
+          resolve(arr);
+        }
+      } catch (err) {
+        reject(err);
+      }
     });
   });
-}
-setTimeout(()=>{
+};
 
-})
-doOperation();// 结果：6
+// 传入promise数组，返回其输出值
+let arr = [
+  () => new Promise((resolve) => setTimeout(() => resolve(5), 100)),
+  () => new Promise((resolve) => setTimeout(() => resolve(1), 50)),
+  () =>
+    new Promise((resolve, reject) =>
+      setTimeout(() => reject(new Error("Error1")), 50)
+    ),
+  () => new Promise((resolve) => setTimeout(() => resolve(10), 200)),
+];
+
+// const result = promiseAll(arr);
+// result.then((val) => console.log(val)); // [ 5, 1, 10 ]
+Promise.all(arr)
+  .then((responses) => {
+    for (const response of responses) {
+      console.log(response);
+    }
+  })
+  .catch((error) => {
+    console.error(`获取失败：${error}`);
+  });

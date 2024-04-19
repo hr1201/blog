@@ -1,0 +1,36 @@
+<!-- 点击事件宏任务 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击</button>
+
+</body>
+<script>
+// 宏任务 - 用户交互事件
+document.querySelector('button').addEventListener('click', function () {
+    console.log('宏任务 - 用户交互事件');
+});
+
+setTimeout(()=>{
+    console.log('宏任务-setTimeout')
+},2000)
+
+// 微任务 - Promise 的 then 方法
+new Promise(function (resolve, reject) {
+    console.log('微任务 - Promise');
+    resolve('111');
+    console.log('主线程任务')
+}).then(function () {
+    console.log('微任务 - Promise 的 then 方法');
+});
+
+console.log('主线程执行');
+</script>
+</html>

@@ -101,6 +101,37 @@ For...of 循环用来遍历**可迭代**对象的每个`元素`。
 
 * 防抖是什么，怎么实现？
   防抖用于确保耗时的任务不会频繁触发，防抖核心概念是在执行函数之前设置延迟，然后在延迟到期之前每次请求函数时重置该延迟。
+  ```js
+  // 示例：t = 50
+  // calls = [
+  //   {"t": 50, inputs: [1]},
+  //   {"t": 75, inputs: [2]}
+  // ]
+  var debounce = function (fn, t) {
+    // 如果在t秒内，计时器还存在，就取消调用；示例1解释：
+    // 在50ms的时候调用，计时器开始计时，还没有执行函数；
+    // 到了75ms的时候再次调用，发现有一个计时器，所以取消此计时器，同时也不执行50ms的输出了，
+    // 转而添加上75ms这个计时器，并在时间到时执行75ms时的输出。
+    let delay = null;
+    return function (...args) {
+      if (delay) {
+        clearTimeout(delay);
+      }
+      delay = setTimeout(() => {
+        fn.apply(null, args);
+      }, t);
+    };
+  };
+
+  let start = Date.now();
+  function log(...inputs) {
+    console.log([Date.now() - start, inputs]);
+  }
+
+  const dlog1 = debounce(log, 50);
+  setTimeout(() => dlog1(1), 50);
+  setTimeout(() => dlog1(2), 75); // 理想状态下，输出：[ 125, [ 2 ] ]
+  ```
 
 * JavaScript 中回调函数和 Promise 之间有什么区别？什么时候更喜欢使用 Promise 而不是回调？另外，回调地狱是什么，如何缓解它？
 
