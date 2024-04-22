@@ -26,6 +26,7 @@
   "dependencies": {
     "@giscus/vue": "^2.3.0",
     "@mdit-vue/shared": "^1.0.0",
+    "@vite-pwa/vitepress": "^0.4.0",
     "directory-tree": "^3.5.1",
     "echarts": "^5.4.3",
     "element-plus": "^2.3.14",

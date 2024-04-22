@@ -182,3 +182,38 @@ For...of 循环用来遍历**可迭代**对象的每个`元素`。
 
   在延迟函数依赖特定上下文（`this 值`）的情况下，可以使用 `bind` 方法将所需的上下文绑定到 `fn`。这会创建一个具有指定上下文的新函数，然后可以将绑定的函数传递给 `setTimeout` 以进行延迟执行。
 
+* JSON数据及其方法：
+  
+  用于以结构化格式传输和存储数据。由两种主要数据结构组成：**对象和数组**。对象中的键必须是字符串，而值可以是任何有效的 JSON 数据类型，包括对象和数组。
+
+  `JSON.parse()`： `JSON.parse()` 是 JavaScript 中内置的函数，将 JSON 字符串转换为 JavaScript 对象、数组或原始值（如字符串、数字、布尔或 null）。它以有效的 JSON 字符串作为输入，并返回相应的 JavaScript 对象、数组或原始值。这允许开发人员以本机 JavaScript 格式处理 JSON 数据。例如：
+  ```js
+  const jsonString = `{"name": "Rarrot","age": 66,"sex": "男"}`;
+  const parseObject = JSON.parse(jsonString);
+  console.log(
+      "姓名：" +
+      parseObject.name +
+      "，年龄：" +
+      parseObject.age +
+      "，性别：" +
+      parseObject.sex
+  );
+  // 姓名：Rarrot，年龄：66，性别：男
+  ```
+
+  `JSON.stringify()`用于将一个对象字符串化，结果的 JSON 字符串将以字符串形式表示对象的键值对。例如：
+  ```js
+  const obj = { name: "Rarrot", age: 66, sex: "男" };
+  let stringifyStr = JSON.stringify(obj);
+  console.log(typeof stringifyStr, stringifyStr);
+  // string {"name":"Rarrot","age":66,"sex":"男"}
+  ```
+
+* 怎么样获取对象的键值对数量？
+  ```js
+  const obj = { name: "Rarrot", age: 66, sex: "男" };
+  console.log(Object.keys(obj).length); // 3
+  ```
+
+
+
