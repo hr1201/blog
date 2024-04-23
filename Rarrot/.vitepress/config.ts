@@ -65,7 +65,7 @@ export default withPwa(
       //   light: '/logo-light.svg',
       //   dark: '/logo-dark.svg',
       // },
-      logo: "https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230508210154.jpg",
+      logo: "/titleImg-120.png",
 
       // https://vitepress.dev/reference/default-theme-config
       footer: {

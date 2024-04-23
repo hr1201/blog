@@ -46,7 +46,7 @@ const svg = computed(() => {
 // 自定义懒加载指令
 let vLazy: Directive<HTMLImageElement, string> = async (el, bingding) => {
   // console.log(el)
-  const defaultImg = await import('/header.jpg')
+  const defaultImg = await import('/titleImg-120.png')
   el.src = defaultImg.default
   // console.log(bingding.value)
   // 使用js提供的api对可视化界面内的元素进行监控s

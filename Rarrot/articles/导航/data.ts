@@ -75,22 +75,22 @@ export const NAV_DATA: NavData[] = [
         title: 'Rarrot的动画库',
         items: [
             {
-                icon: '/header.jpg',
+                icon: '/titleImg-120.png',
                 title: 'welcome',
                 link: '/cartoonsMD/O.o欢迎.html',
             },
             {
-                icon: '/header.jpg',
+                icon: '/titleImg-120.png',
                 title: '01彩虹猫',
                 link: '/cartoonsMD/彩虹猫.html',
             },
             {
-                icon: '/header.jpg',
+                icon: '/titleImg-120.png',
                 title: '文字雨',
                 link: '/cartoonsMD/文字雨.html',
             },
             {
-                icon: '/header.jpg',
+                icon: '/titleImg-120.png',
                 title: 'ikun篮球',
                 link: '/cartoonsMD/篮球.html',
             },
