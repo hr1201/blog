@@ -125,9 +125,20 @@ export default withPwa(
         theme_color: "#ffffff", // 主题颜色
         icons: [
           {
-            src: "/titleImg.png", // 图标路径
+            src: "/titleImg-120.png", // 图标路径
             sizes: "120x120", // 图标尺寸
             type: "image/png", // 图标类型
+          },
+          {
+            src: "/titleImg-192.png",
+            sizes: "192x192",
+            type: "image/png",
+          },
+          {
+            src: "titleImg-512.png",
+            sizes: "512x512",
+            type: "image/png",
+            purpose: "any",
           },
         ],
       },
