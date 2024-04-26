@@ -19,6 +19,7 @@ cache
 temp
 examples-temp
 node_modules
+pnpm-lock.yaml
 pnpm-global
 *.timestamp-*.mjs
 
