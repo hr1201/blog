@@ -11,7 +11,6 @@ export const nav: DefaultTheme.Config['nav'] = [
             { text: "JavaScript", link: "/articles/JavaScript/0认识JavaScript" },
             { text: "typescript", link: "/articles/typescript/01-基础类型" },
             { text: "Vue", link: "/articles/Vue/01-Vue3基础语法" },
-            { text: "Nestjs", link: "/articles/Nestjs/依赖注入和控制反转" },
         ],
     },
     {
