@@ -110,7 +110,8 @@ git config --global --unset https.proxy
 
 
 
-在本地解决冲突后，使用`git rebase --skip`进行跳过此阶段，之后在进行push，即可成功上传
+
+在本地解决冲突后，可以使用`git rebase --skip`进行强制远程代码覆盖本地代码，或者用`git rebase --continue`在本地手动解决冲突之后说明冲突已经解决；之后在进行push，即可成功上传
 
 ![image-20230115122858982](https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/image-20230115122858982.png)
 
