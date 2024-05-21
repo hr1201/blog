@@ -19,7 +19,9 @@ export default defineConfig({
     chunkSizeWarningLimit: 600, // 代码块超过600KB即提示，设置为 600 KB
   },
   server: {
-    port: 5175
+    port: 5175,
+    host: 'localhost',
+    hmr: true
   },
   esbuild: {
     jsxInject: `import React from 'react'`

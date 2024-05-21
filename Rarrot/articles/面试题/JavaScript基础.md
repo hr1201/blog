@@ -78,7 +78,7 @@
   console.log(sum); // 6
   ```
 
-`filter`用于过滤数组
+  `filter`用于过滤数组
 
 * 有哪些值是不被认为真值的?
 
@@ -93,16 +93,47 @@
 
   For...in 循环更常用于遍历`对象的键`，也可以用于遍历`数组的索引`。但是，它们也可以用于遍历数组的索引。并且会优先稀疏数组，省略空索引。
 
-For...of 循环用来遍历**可迭代**对象的每个`元素`。
+  For...of 循环用来遍历**可迭代**对象的每个`元素`。
 
 * 节流是什么，怎么实现？
-  例如你在实现一个搜索框时，想实现输入时即开始搜索，但又不希望太频繁的发送请求，就可以使用节流来限制每秒发送请求的数量，从而优化系统性能。或者也可以使用记忆化`memoize()`来缓存以前的结果避免重复请求。
+  
+  节流就是在指定时间之内只执行一次操作，例如搜索框的搜索联想功能。
+  ```js
+  function throttled(fn, delay) {
+    let timer = null;
+    let starttime = Date.now();
+    return function (...args) {
+      let curTime = Date.now(); // 当前时间
+      let remaining = delay - (curTime - starttime); // 从上一次到现在，还剩下多少多余时间
+      let context = this;
+      clearTimeout(timer);
+      if (remaining <= 0) {
+        fn.apply(context, args);
+        starttime = Date.now();
+      } else {
+        timer = setTimeout(fn, remaining);
+      }
+    };
+  }
+
+  let start = Date.now();
+  function log(...inputs) {
+    console.log([Date.now() - start, inputs]);
+  }
+
+  const tlog1 = throttled(log, 50);
+  setTimeout(() => tlog1(1), 50); // [ 54, [ 1 ] ]
+  setTimeout(() => tlog1(2), 75); // 
+  setTimeout(() => tlog1(3), 85); // 
+  setTimeout(() => tlog1(4), 102); // [ 115, [ 4 ] ]
+  ```
 
 
 * 防抖是什么，怎么实现？
-  防抖用于确保耗时的任务不会频繁触发，防抖核心概念是在执行函数之前设置延迟，然后在延迟到期之前每次请求函数时重置该延迟。
+  
+  防抖用于确保耗时的任务不会频繁触发，防抖核心概念是在执行函数之前设置延迟，然后在延迟到期之前每次请求函数时重置该延迟。例如你在实现一个搜索框时，想实现输入时即开始搜索，但又不希望太频繁的发送请求，就可以使用防抖来限制每秒发送请求的数量，从而优化系统性能。或者也可以使用记忆化`memoize()`来缓存以前的结果避免重复请求。
   ```js
-  // 示例：t = 50
+  // 示例1：t = 50
   // calls = [
   //   {"t": 50, inputs: [1]},
   //   {"t": 75, inputs: [2]}

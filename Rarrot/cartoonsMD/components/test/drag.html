@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>方块拖动</title>
+    <script src="https://unpkg.com/veloxi/dist/veloxi.min.js"></script>
+  </head>
+  <style>
+    .box {
+      width: 80px;
+      height: 80px;
+      background: rgb(221, 221, 221);
+      border-radius: 5px;
+      touch-action: none;
+      will-change: transform;
+    }
+  </style>
+  <body>
+    <div
+      class="box"
+      data-vel-view="draggable"
+      data-vel-plugin="DragWithSpringPlugin"
+    ></div>
+  </body>
+  <script>
+    //     import {
+    //   createApp,
+    //   DragEventPlugin,
+    //   DragEvent
+    // } from 'veloxi'
+
+    const createApp = Veloxi.createApp();
+    const DragEventPlugin = Veloxi.DragEventPlugin;
+    const DragEvent = Veloxi.DragEvent;
+
+    const DragWithSpringPlugin = (context) => {
+      const dragEvent = context.useEventPlugin(DragEventPlugin);
+
+      context.setup(() => {
+        const draggable = context.getView("draggable");
+
+        draggable.position.animator.set("spring");
+
+        dragEvent.addView(draggable);
+
+        dragEvent.on(DragEvent, (event) => {
+          if (event.isDragging) {
+            draggable.position.set({ x: event.x, y: event.y });
+          } else {
+            // 拖动到指定位置
+            // draggable.position.set({ x: event.x, y: event.y });
+            // 可以拖动之后返回原位
+            draggable.position.reset();
+          }
+        });
+      });
+    };
+
+    DragWithSpringPlugin.pluginName = "DragWithSpringPlugin";
+    DragWithSpringPlugin.scope = "draggable";
+
+    const app = Veloxi.createApp();
+    app.addPlugin(DragWithSpringPlugin);
+    app.run();
+  </script>
+</html>

@@ -55,9 +55,7 @@ let vLazy: Directive<HTMLImageElement, string> = async (el, bingding) => {
       // console.log(entries)
       // 通过判断intersectionRatio，可以知道元素是否显示在页面上，然后进行加载
       if (entries[0].intersectionRatio > 0) {
-        setTimeout(() => {
-          el.src = bingding.value
-        }, 0)
+        el.src = bingding.value
         // 在判断完之后就可以进行取消监听
         obServe.unobserve(el)
       }
