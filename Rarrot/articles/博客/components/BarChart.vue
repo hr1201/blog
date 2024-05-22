@@ -4,14 +4,35 @@
 
 <script lang="ts" setup>
 import { shallowRef, watch, StyleValue, ref, nextTick } from 'vue';
-import * as echarts from 'echarts';
+// import * as echarts from 'echarts';
+// const isClient = typeof window !== 'undefined';
+// 在Echarts5.5.0中'echarts/core.js'支持纯Node环境，所以可以使用以下这种按需引入
+import * as echarts from 'echarts/core';
+import {
+  TitleComponent,
+  TitleComponentOption,
+  TooltipComponent,
+  TooltipComponentOption,
+  GridComponent,
+  GridComponentOption,
+  LegendComponent,
+  LegendComponentOption,
+  DataZoomComponent,
+  DataZoomComponentOption
+} from 'echarts/components';
+import { BarChart, BarSeriesOption } from 'echarts/charts';
+import { CanvasRenderer } from 'echarts/renderers';
 
+echarts.use([TitleComponent, TooltipComponent, GridComponent, LegendComponent, BarChart, CanvasRenderer, DataZoomComponent]);
+
+type EChartsOption = echarts.ComposeOption<
+  TitleComponentOption | TooltipComponentOption | GridComponentOption | LegendComponentOption | BarSeriesOption | DataZoomComponentOption
+>;
 // type EChartsOption = echarts.ComposeOption<
 //     echarts.TitleComponentOption | echarts.TooltipComponentOption | echarts.GridComponentOption | echarts.LegendComponentOption | echarts.BarSeriesOption | echarts.DataZoomComponentOption
 // >;
 
 const myChart = shallowRef<echarts.ECharts | undefined>(undefined);
-// const myChart = shallowRef();
 
 // const sortData = ref<number[]>([])
 const myChartStyle: StyleValue | undefined = { float: "left", width: '100%', height: '500px', marginTop: '3vh' };
@@ -21,7 +42,7 @@ const props = defineProps(['yAxisData', 'seriesData'])
 
 const propsDesc = ref<{ value: number; label: any; }[]>([]);
 
-const option = shallowRef<echarts.EChartsOption>({
+const option = shallowRef<EChartsOption>({
     title: {
         text: '一周时长统计'
     },
