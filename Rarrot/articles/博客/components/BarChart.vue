@@ -144,7 +144,10 @@ watch([props,propsDesc.value], async () => {
     (option as any).value.yAxis.data = labels;
     (option as any).value.series[0].data = values;
 
-    myChart.value = echarts.init(mychart.value);
+    myChart.value = echarts.init(mychart.value,{
+        renderer:'svg',
+        ssr:true
+    });
 
     pageUpdate();
 }, { deep: true });
