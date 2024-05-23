@@ -1,7 +1,7 @@
 <template>
     <block color="rgba(256,256,256,0.1)">
         <div class="ikun">
-            <img @click="bounceAnimation" ref="basketball" class="basketball" src="../images/basketball.png" alt="basketball">
+            <img @click="bounceAnimation" ref="basketball" class="basketball" src="./images/basketball.png" alt="basketball">
         </div>
     </block>
 </template>
@@ -29,7 +29,7 @@ const bounceAnimation = () => {
     width: 100%;
     height: 100%;
     display: flex;
-    background-image: url(../images/ikun.svg);
+    background-image: url(./images/ikun.svg);
     background-repeat: repeat-x;
     background-position: center;
 }

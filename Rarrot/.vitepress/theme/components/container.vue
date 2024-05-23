@@ -3,7 +3,7 @@
         <Giscus
 			v-if="showComment"
 			:is="'script'"
-			:key="title.value"
+			:key="title"
 			repo= "hr1201/gitalk-evalute"
 			repo-id= "R_kgDOJ9WSwA"
 			category= "Announcements"

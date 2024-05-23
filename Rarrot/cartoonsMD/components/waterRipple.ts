@@ -1,5 +1,5 @@
 // @ts-nocheck
-import bridge from "../images/mountain.jpg";
+import bridge from "./images/mountain.jpg";
 
 class WaterRipple {
   constructor(props) {
