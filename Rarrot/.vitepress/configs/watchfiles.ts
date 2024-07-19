@@ -21,14 +21,11 @@ export const FileHMR = (): Plugin => {
                         (defineConfig as UserConfig).themeConfig.sidebar = generateSidebar()
                         await restart();
                         // console.log(typeof path,path)//string
-                        // console.log('update sidebar...',path);
                     } catch (error: any){
-                        // console.log(error)
+                        console.log(error)
                     }
                 }
             });
         },
     }
 }
-
-// 仍然没有解决withPwa下获取不到sidebar的bug

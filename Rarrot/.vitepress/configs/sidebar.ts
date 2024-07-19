@@ -68,7 +68,9 @@ function generateSidebar() {
 
         "/articles/面试题": sidebarAuto(
             path.resolve(__dirname, "../../articles/面试题"),
-        ),
+        ).concat(sidebarAuto(
+            path.resolve(__dirname, "../../articles/面试题/html&css"),
+        )),
     }
 }
 
