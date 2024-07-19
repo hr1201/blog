@@ -1,4 +1,4 @@
-import { DefaultTheme, defineConfig } from 'vitepress';
+import { DefaultTheme, defineConfig, UserConfig } from 'vitepress';
 // import sidebarAuto from './sidebarAuto'
 // 用于生成sitemap
 import { createContentLoader } from 'vitepress';
@@ -107,7 +107,7 @@ let config = defineConfig({
 });
 
 if (isProduction) {
-  config = await withPwa(config);
+  config = await withPwa(config) as UserConfig<DefaultTheme.Config>;
 }
 
 export default config;
