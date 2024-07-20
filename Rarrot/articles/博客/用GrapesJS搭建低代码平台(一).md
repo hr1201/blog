@@ -85,6 +85,7 @@ GrapesJS 中的块只是一段可重用的 `HTML`，你可以将其放入canvas�
 <div id="gjs">
   ...
 </div>
+<!-- 用来放置区块管理器 -->
 <div id="blocks"></div> // [!code ++]
 ```
 ```js
@@ -138,20 +139,21 @@ GrapesJS 附带了一些内置组件，一旦在画布中渲染，它们就可�
 
 当用户将`Block`拖动到`Canvas`里之后，GrapesJS会经由解析器将它们转换成`Component`，这时候用户编辑组件的样式、内容、属性等，就变成和`Component`交互了。
 
-以下为示例代码：
+以下为示例代码，注释用文件资源管理器作一个讲解：
 ```js
 // 将Blcok创建为组件
 editor.BlockManager.add("my-block-id", {
   // 文件名
   label: "my-block",
-  // 文件夹名，BlockManager为根目录，里边有很多文件夹
+  // 这里设置"my-block-id"归属于哪个文件夹，
+  // value值为文件夹名，BlockManager为根目录，里边有很多文件夹
   category: "Base",
   content: {
     tagName: "div",
     draggable: true,
     // 定义元素内部的一些属性，例如class类
     attributes: { "some-attribute": "some-value" },
-    // 以下为Base Block中的组件
+    // 嵌套组件
     components: [
       {
         tagName: "span",
@@ -166,10 +168,22 @@ editor.BlockManager.add("my-block-id", {
     ],
   },
 });
+
+// 此Block生成的HTML为：
+<body>
+  <div some-attribute="some-value">
+    <span>
+      <b>Some static content</b>
+    </span>
+    <div>
+      <span>HTML at some point</span>
+    </div>
+  </div>
+</body>
 ```
 
 ## 自定义面板
-在上面的时候我们用`panels: { defaults: [] }`避免了任何默认面板，现在我们用[Panels API](https://grapesjs.com/docs/api/panels.html)添加页面代码和json查看：
+在上面的时候我们用`panels: { defaults: [] }`避免了任何默认面板，可以用panels添加一些按钮，例如全屏，预览，代码导出等，现在我们用[Panels API](https://grapesjs.com/docs/api/panels.html)添加页面代码和json查看：
 ```html
 <div class="panel__top"> // [!code ++]
   <div class="panel__basic-actions"></div> // [!code ++]
