@@ -54,10 +54,6 @@ function generateSidebar() {
             path.resolve(__dirname, "../../articles/工具"),
         ),
 
-        "/articles/网络": sidebarAuto(
-            path.resolve(__dirname, "../../articles/网络"),
-        ),
-
         "/articles/数据结构与算法": sidebarAuto(
             path.resolve(__dirname, "../../articles/数据结构与算法/数据结构"),
         ).concat(sidebarAuto(
@@ -65,10 +61,6 @@ function generateSidebar() {
         )).concat(sidebarAuto(
             path.resolve(__dirname, "../../articles/数据结构与算法/其他"),
         )),
-
-        "/articles/面试题": sidebarAuto(
-            path.resolve(__dirname, "../../articles/面试题"),
-        ),
     }
 }
 

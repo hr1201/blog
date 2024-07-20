@@ -21,8 +21,6 @@ export const nav: DefaultTheme.Config['nav'] = [
         ]
     },
     { text: '算法', link: '/articles/数据结构与算法/其他/好用方法' },
-    { text: '面试题', link: '/articles/面试题/JavaScript基础' },
-    { text: '网络', link: '/articles/网络/TCP-IP模型' },
     { text: '工具', link: '/articles/工具/nvm' },
     { text: '动画', link: '/cartoonsMD/O.o欢迎' },
 ]
