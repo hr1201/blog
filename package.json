@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "Rarrot:dev": "vitepress dev Rarrot --hot",
+    "Rarrot:dev": "vitepress dev Rarrot",
     "Rarrot:host": "vitepress dev Rarrot --host",
     "Rarrot:build": "vitepress build Rarrot",
     "Rarrot:preview": "vitepress preview Rarrot",
