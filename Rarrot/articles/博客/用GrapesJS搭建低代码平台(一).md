@@ -323,46 +323,53 @@ const editor = grapesjs.init({
 <div id="gjs" style="height: 0px; overflow: hidden">
 </div>
 ```
-```js
-const editor = grapesjs.init({
+```JavaScript
+var editor = grapesjs.init({
+  showOffsets: 1,
+  noticeOnUnload: 0,
   container: '#gjs',
+  height: '100%',
   fromElement: true,
-  height: '900px',
-  width: '100%',
   storageManager: {
-    id: 'gjs-',
-    type: 'local',
-    autosave: true,
-    storeComponents: true,
-    storeStyles: true,
-    storeHtml: true,
-    storeCss: true,
+    autoload: 0
   },
-  // 静态存储模版，在localstorage中存储，存储限制为5MB
-  assetManager: {
-    upload: true,
-    uploadName: 'files',
-    assets: [],
-    // 将图像转换为 Base64 并添加到 assetManager
-    // 长期存储需要将图片直接存在远程服务器中
-    uploadFile(e) {
-      const files = e.dataTransfer ? e.dataTransfer.files : e.target.files;
-
-      const readFileAsDataURL = file => new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onload = () => resolve(reader.result);
-        reader.onerror = error => reject(error);
-        reader.readAsDataURL(file);
-      });
-      
-      Promise.all(Array.from(files).map(readFileAsDataURL))
-        .then((base64Images) => {
-          const images = base64Images.map(src => ({ src }));
-          editor.AssetManager.add(images);
-        })
-        .catch(err => console.error('Error reading files:', err));
-    },
+  styleManager: {
+    sectors: [{
+      name: 'General',
+      open: false,
+      buildProps: ['float', 'display', 'position', 'top', 'right', 'left', 'bottom']
+    }, {
+      name: 'Flex',
+      open: false,
+      buildProps: ['flex-direction', 'flex-wrap', 'justify-content', 'align-items', 'align-content',
+        'order', 'flex-basis', 'flex-grow', 'flex-shrink', 'align-self'
+      ]
+    }, {
+      name: 'Dimension',
+      open: false,
+      buildProps: ['width', 'height', 'max-width', 'min-height', 'margin', 'padding'],
+    }, {
+      name: 'Typography',
+      open: false,
+      buildProps: ['font-family', 'font-size', 'font-weight', 'letter-spacing', 'color', 'line-height',
+        'text-shadow'
+      ],
+    }, {
+      name: 'Decorations',
+      open: false,
+      buildProps: ['border-radius-c', 'background-color', 'border-radius', 'border', 'box-shadow',
+        'background'
+      ],
+    }, {
+      name: 'Extra',
+      open: false,
+      buildProps: ['transition', 'perspective', 'transform'],
+    }],
   },
 });
 ```
 ![](https://cdn.jsdelivr.net/gh/hr1201/img@main/imgs/202406011758910.png)
+
+## 源码
+
+github：https://github.com/hr1201/Rarrot-Grapesjs-HTML
