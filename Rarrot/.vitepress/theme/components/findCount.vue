@@ -1,6 +1,6 @@
 <template>
     <p align="right">
-        <img class="inverted-image" alt="0" src="https://profile-counter.glitch.me/rarrot.ren/count.svg" />
+        <img class="inverted-image" alt="0" src="https://profile-counter.glitch.me/rorrot.cc/count.svg" />
     </p>
 </template>
 
