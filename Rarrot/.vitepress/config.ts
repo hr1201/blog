@@ -48,7 +48,7 @@ let config = defineConfig({
   },
   buildEnd: async ({ outDir }) => {
     const sitemap = new SitemapStream({
-      hostname: 'https://www.rorrot.cc/'
+      hostname: 'https://www.rarrot.ren/'
     });
     const writeStream = createWriteStream(resolve(outDir, 'sitemap.xml'));
     sitemap.pipe(writeStream);

@@ -74,7 +74,7 @@ const test = useTestStore()
 // 1.直接修改test.age++ 
 // 2.用test.$patch({ age:888 })进行修改
 // 3.用函数的写法：test.$patch((state)=>{ state.age=999 })  推荐
-// 4.整个对象进行修改test.$state={ age:1000,name:'rorrot' }
+// 4.整个对象进行修改test.$state={ age:1000,name:'rarrot' }
 // 5.在store里边的actions里面定义一个函数，然后直接调用test.setage(123)
 
 function change(){

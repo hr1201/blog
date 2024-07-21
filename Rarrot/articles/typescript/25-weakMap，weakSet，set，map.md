@@ -102,7 +102,7 @@ ECMAScript 6 新增的“**弱集合**”（WeakSet）是一种新的集合类�
 
 
 
-具体可以前往JavaScript的[weakMap](https://www.rorrot.cc/articles/JavaScript/WeakMap.html)和[weakSet](https://www.rorrot.cc/articles/JavaScript/WeakSet.html)。
+具体可以前往JavaScript的[weakMap](https://www.rarrot.ren/articles/JavaScript/WeakMap.html)和[weakSet](https://www.rarrot.ren/articles/JavaScript/WeakSet.html)。
 
 
 

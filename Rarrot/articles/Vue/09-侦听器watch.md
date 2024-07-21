@@ -35,7 +35,7 @@ watch([message1],(newval,oldval)=>{
 })
 
 // 2. 对多变量进行侦听
-let message2=ref<string>('rorrot')
+let message2=ref<string>('rarrot')
 
 let message3=ref<string>('666')
 
@@ -390,7 +390,7 @@ export function traverse(value: unknown, seen?: Set<unknown>) {
       job()
     } else {
       // 没有设置immediate，就给旧值进行初始化，
-      // 例如let message2=ref<string>('rorrot')，旧值就会初始化为rorrot
+      // 例如let message2=ref<string>('rarrot')，旧值就会初始化为rorrot
       oldValue = effect.run()
     }
   } else if (flush === 'post') {

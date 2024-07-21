@@ -120,7 +120,7 @@ autorun(()=>{
 })
 
 personProxy.attr='你又6 ?'
-personProxy.name='rorrot'
+personProxy.name='rarrot'
 
 console.log(list)//Set(1) { [Function (anonymous)] }
 ```
