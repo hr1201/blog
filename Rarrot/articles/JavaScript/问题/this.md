@@ -75,9 +75,7 @@ document.getElementById('outer').addEventListener('click', function(event) {
 可以使用函数上的 `.call()`、`.apply()` 或 `.bind()` 方法来明确设置 this 的上下文：
 ```js
 function logThis() {
-  console
-
-.log(this);
+  console.log(this);
 }
 
 const obj1 = { number: 1 };
