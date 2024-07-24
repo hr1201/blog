@@ -240,7 +240,6 @@ watch([props, propsDesc.value], async () => {
   (option as any).value.yAxis.data = labels;
   (option as any).value.series[0].data = values;
 
-  // await nextTick(); // Add this line to wait for the DOM update   
   myChart.value = echarts.init(mychart.value);
   pageUpdate();
 }, { deep: true });
