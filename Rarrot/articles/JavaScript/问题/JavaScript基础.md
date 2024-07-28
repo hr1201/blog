@@ -246,5 +246,8 @@
   console.log(Object.keys(obj).length); // 3
   ```
 
+* `setTimeout`最小执行时间是多少？
 
-
+  HTML5规定：`setTimeout`最小为4ms，`setInterval`最小为10ms。
+  
+  如果`setTimeout`嵌套大于5个以上会自动有个4ms的**延时**，这是js不能精确计时的一个点。

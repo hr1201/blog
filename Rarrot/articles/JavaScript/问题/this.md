@@ -74,19 +74,25 @@ document.getElementById('outer').addEventListener('click', function(event) {
 ## 显示/隐式绑定
 可以使用函数上的 `.call()`、`.apply()` 或 `.bind()` 方法来明确设置 this 的上下文：
 ```js
-function logThis() {
-  console.log(this);
+function logThis(age, name) {
+  console.log(this, age, name);
 }
 
-const obj1 = { number: 1 };
-const obj2 = { number: 2 };
+const people = { number: 1 };
 
-logThis.call(obj1); // { number: 1 }
-logThis.call(obj2); // { number: 2 }
+logThis.call(people, "18", "小红"); // {number: 1} '18' '小红'
 
-const boundLogThis = logThis.bind(obj1);
-boundLogThis(); // { number: 1 }
+logThis.apply(people, ["25", "小华"]); // {number: 1} '25' '小华'，apply 与 call 的区别在于参数的传递方式
+
+const boundLogThis = logThis.bind(people, "55", "老徐");
+boundLogThis(); // {number: 1} '55' '老徐'
+
+boundLogThis.call(people, "18", "小徐"); // {number: 1} '55' '老徐'，bind 之后无法再改变 this 的指向
 ```
+`.call()`、`.apply()` 和 `.bind()` 的区别在于：
+* `.call()` 和 `.apply()` 立即调用函数，`.call()` 接受参数**列表**，`.apply()`接受参数**数组**。
+* `.call()` 比 `.apply()`的性能要好，尤其是传入参数超过三个以上的时候。
+* `.bind()` 返回一个新函数，它的 `this` 值永久绑定到指定的对象。
 
 ### 绑定方法和永久`this`上下文
 `bind` 方法创建一个新函数，当调用时，将其 `this` 关键字设置为提供的值，以及在调用新函数时提供的一系列参数。
@@ -110,7 +116,7 @@ console.log(greetPerson1.call(person2)); // 你好，我是 Rarrot
 
 // 相比之下，正常函数调用允许使用 `call` 方法设置 `this` 上下文
 console.log(greet.call(person2)); // 你好，我是 666
-```
+``` 
 
 ## 以下为什么在浏览器中输出为underfined和6？
 
@@ -134,3 +140,31 @@ console.log(x.x)
 console.log(y.x) 
 ```
 
+## 总结
+
+1. 全局对象中的`this`指向
+   
+   指向的是`window`
+
+2. 全局作用域或者普通函数中的`this`
+   
+   指向全局`window`
+
+3. `this`永远指向最后调用它的那个对象
+   
+   在不是箭头函数的情况下
+
+4. **new操作符**改变了`this`的指向
+   
+5. **apply，call，bind**改变`this`指向
+   
+   在不是箭头函数的情况下
+
+6. 箭头函数的`this`
+   
+   它的指向在定义的时候已经确定了
+   箭头函数它没有`this`，看外层是否有函数，有就是外层函数的`this`，没有就是`window`
+   
+7. 匿名函数中的`this`
+   
+   永远指向了`window`，匿名函数的执行环境具有全局性，因此`this`指向`window`

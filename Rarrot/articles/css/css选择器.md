@@ -25,7 +25,94 @@ css的特性：继承性，层叠性，优先级。
 `a:hover`必须置于`a:link`和`a:visited`之后,才是有效的.`a:active`必须被置于`a:hover`之后,才是有效的；可以是class选择器`:hover`;
 :::
 
+**属性选择器：** 通过标记的属性来选择元素，使用方式：标记名[属性名=属性值]{}；
+多用于对特定属性的标记进行样式的设置。
+代码示例：
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 选择所有title属性的标记 */
+      img[title] {
+        border: 5px solid #ccc;
+      }
+
+      /* 选择所有title属性值为"pic"的标记 */
+      img[title="pic"] {
+        border: 5px solid #f00;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="https://www.baidu.com/img/flexible/logo/pc/result.png" title="pic" alt="">
+    <img src="https://www.baidu.com/img/flexible/logo/pc/result.png" title="pic1" alt="">  
+  </body>
+</html>
+```
+
+**相邻选择器：** 用于选择紧接在另一元素后的元素，使用方式：标记名+标记名{}；
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* item4 的背景颜色为red */
+      .current + li {
+        background-color: red;
+      }
+
+      /* 还有加边框时不给第一个加 */
+      ul li + li {
+        border-top: 5px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>item1</li>
+      <li>item2</li>
+      <li class="current">item3</li>
+      <li>item4</li>
+    </ul>
+  </body>
+</html>
+```
+
+**子元素选择器：** 用于选择某个元素的子元素，使用方式：标记名>标记名{}；
+```html 
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 选择ul下的p */
+      ul>p {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>item1</li>
+      <li>item2</li>
+      <li>item3</li>
+      <li>item4</li>
+      <p>item5</p>
+    </ul>
+  </body>
+</html>
+```
+
 ## 优先级
 选择器优先级为：
 
-!important > 行内样式 > id选择器 > 类/伪类/属性选择器 > 标签选择器 > 全局选择器
+!important ==> 行内样式 ==> id选择器 ==> 类/伪类/属性选择器 ==> 标签选择器 ==> 相邻选择器 (+) ==> 子元素选择器 (>) ==> 后代选择器 ==> 通配符选择器 (*) ==> 继承样式 ==> 浏览器默认样式
