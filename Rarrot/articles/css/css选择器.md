@@ -113,6 +113,47 @@ css的特性：继承性，层叠性，优先级。
 ```
 
 ## 优先级
-选择器优先级为：
 
-!important ==> 行内样式 ==> id选择器 ==> 类/伪类/属性选择器 ==> 标签选择器 ==> 相邻选择器 (+) ==> 子元素选择器 (>) ==> 后代选择器 ==> 通配符选择器 (*) ==> 继承样式 ==> 浏览器默认样式
+选择器优先级计算方式：
+
+1.内联样式，如`style="color: green"`，权值为**1000**
+
+2.ID选择器，如`#el`，权值为**0100**
+
+3.类、伪类、属性选择器，如`.foo, :first-child, div[class="foo"]`，权值为**0010**
+
+4.标签、伪元素选择器，如`div:hover`，权值为**0001**
+
+5.通配符、子类选择器、兄弟选择器，如`*, >, +`，权值为**0000**
+
+6.继承的样式没有权值
+
+权值相加，权值越大，优先级越高。示例：
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+   /* 1  1   10 = 12*/
+      ul li.list3 {
+        color: red;
+      }
+      /* 10 */
+      .list3 {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>item1</li>
+      <li>item2</li>
+      <li class="list3">item3</li>
+      <li>item4</li>
+    </ul>
+  </body>
+</html>
+```
