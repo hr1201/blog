@@ -4,7 +4,7 @@ new操作符会进行四步：
 1. 创建一个空对象
 2. 把空对象和构造函数的prototype关联起来
 3. 把构造函数的this绑定到空对象上
-4. 根据构造函数的返回值类型返回结果，如果是值类型就返回空对象，如果是引用类型就返回引用类型
+4. 根据构造函数的返回值类型返回结果，如果是基础类型就返回空对象，如果是引用类型就返回引用类型
 
 ```JavaScript
 function newFn(Fun, ...args) {
@@ -12,9 +12,9 @@ function newFn(Fun, ...args) {
   let obj = {};
   // 2. 把空对象和构造函数的prototype关联起来
   obj.__proto__ = Fun.prototype;
-  // 3. 把构造函数的this绑定到空对象上
+  // 3. 把构造函数的this绑定到空对象上，当构造函数有返回值时，result为返回值，否则为undefined
   const result = Fun.apply(obj,args)
-  // 4. 根据构造函数的返回值类型返回结果，如果是值类型就返回空对象，如果是引用类型就返回引用类型
+  // 4. 根据构造函数的返回值类型返回结果，如果是基础类型就返回空对象，如果是引用类型就返回引用类型
   return result instanceof Object ? result : obj;
 }
 
@@ -30,6 +30,29 @@ let obj = newFn(person, "Rarrot");
 obj.say(); // 说话
 console.log(obj) // person {name: 'Rarrot'}
 ```
+
+为什么要这么写呢？
+```js
+function Person() {
+  this.name = 'Rarrot';
+
+  // 检验第三步时打开下面这行代码
+  // return { name: 'new Rarrot' };
+}
+
+let person = new Person();
+
+// 检验第一步，原型的指向
+person.__proto__ === Person.prototype; // true
+
+// 检验第二步，this的指向
+console.log(person); // Person {name: 'Rarrot'}
+
+// 检验第三步，为什么要返回引用类型
+// 当Person中返回基础类型，不会变化；当返回引用类型，会返回引用类型
+console.log(person); // {name: 'new Rarrot'}
+```
+
 
 ## 注意
 
