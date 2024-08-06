@@ -72,7 +72,7 @@ document.getElementById('outer').addEventListener('click', function(event) {
 在这两种上下文中，跟其他的面向对象语言相似，构造函数上下文中会根据new关键字来变更this指向为新对象；类上下文中也同样会引用类的实例。
 
 ## 显示/隐式绑定
-可以使用函数上的 `.call()`、`.apply()` 或 `.bind()` 方法来明确设置 this 的上下文：
+可以使用***函数***上的 `.call()`、`.apply()` 或 `.bind()` 方法来明确设置 this 的上下文：
 ```js
 function logThis(age, name) {
   console.log(this, age, name);
@@ -85,14 +85,41 @@ logThis.call(people, "18", "小红"); // {number: 1} '18' '小红'
 logThis.apply(people, ["25", "小华"]); // {number: 1} '25' '小华'，apply 与 call 的区别在于参数的传递方式
 
 const boundLogThis = logThis.bind(people, "55", "老徐");
-boundLogThis(); // {number: 1} '55' '老徐'
+boundLogThis(); // {number: 1} '55' '老徐'，返回新函数，非立即执行
 
 boundLogThis.call(people, "18", "小徐"); // {number: 1} '55' '老徐'，bind 之后无法再改变 this 的指向
 ```
 `.call()`、`.apply()` 和 `.bind()` 的区别在于：
-* `.call()` 和 `.apply()` 立即调用函数，`.call()` 接受参数**列表**，`.apply()`接受参数**数组**。
+* `.call()` 和 `.apply()` **立即调用**函数，`.call()` 接受参数**列表**，`.apply()`接受参数**数组**。
 * `.call()` 比 `.apply()`的性能要好，尤其是传入参数超过三个以上的时候。
-* `.bind()` 返回一个新函数，它的 `this` 值永久绑定到指定的对象。
+* `.bind()` 不会立即执行，返回一个**新函数**，它的 `this` 值永久绑定到指定的对象。
+
+### 使用场景
+场景1: apply
+```js
+let arr = [1, 2, 3, 4, 5];
+console.log(Math.max.apply(null, arr)); // 5
+```
+
+场景2: bind
+```html
+<!DOCTYPE html>
+<html>
+<body>
+  <button id="btn">点击</button>
+  <button id="chuo">戳一戳</button>
+  <script>
+    var btn = document.getElementById('btn');
+    var chuo = document.getElementById('chuo');
+    
+    // onclick需要一个函数，而不是一个对象，所以使用bind
+    btn.onclick = function() {
+      console.log(this); // <button id="chuo">戳一戳</button>
+    }.bind(chuo);
+  </script>
+</body>
+</html>
+```
 
 ### 绑定方法和永久`this`上下文
 `bind` 方法创建一个新函数，当调用时，将其 `this` 关键字设置为提供的值，以及在调用新函数时提供的一系列参数。

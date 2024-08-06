@@ -4,8 +4,9 @@
 主要在于父类指向构造函数的prototype，再创建子类。
 
 ```javascript
-function Parent() {
+function Parent(name) {
   this.parentProperty = true;
+  this.name = name
 }
 
 Parent.prototype.getParentProperty = function() {
@@ -19,8 +20,9 @@ function Child() {
 // 继承Parent
 Child.prototype = new Parent();
 
-let Child1 = new Child();
+let Child1 = new Child('Child1');
 console.log(Child1.getParentProperty())// true
+console.log(Child1.name) // undefined
 ```
 
 **优点**：
@@ -73,7 +75,7 @@ function Child(name, age) {
 }
 
 Child.prototype = new Parent(); // 第一次调用Parent()
-Child.prototype.constructor = Child;
+Child.prototype.constructor = Child; // 修正constructor指向，防止指向Parent
 
 let Child1 = new Child('child1', 18);
 Child1.colors.push('black');
