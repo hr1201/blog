@@ -1,0 +1,11 @@
+# 换到新电脑后，我安装的工具
+
+1. utools
+
+2. 登录github，vscode下载copilot
+
+3. 用linux.do获取到access_token，登录[oaifree](https://new.oaifree.com/)
+
+4. 给浏览器安装沉浸式翻译
+
+5. 
