@@ -30,8 +30,10 @@ font-size默认是16px，设为62.5%，代表16px的0.625倍
       .box3{ 
         /* 此时width为192px，相对于父元素box2 */
         /* width: 3em;  */
+
         /* 此时width为48px，相对于html */
         width: 3rem;
+
         background: #d2e9da;
       }
     </style>
